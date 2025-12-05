@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout-Page</title>
+    <link rel="icon" href="photo/logo.jpeg" type="image/jpeg" sizes="16x16" />
+  </head>
+  <body>
+    <h1>Checkout</h1>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Address</legend>
+        <p>Shipping information</p>
+        <input type="text" name="name" id="name" placeholder="First Name" />
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Last Name"
+        /><br /><br />
+        <input
+          type="text"
+          name="address"
+          id="address"
+          placeholder="Address"
+        /><br /><br />
+        <input
+          type="text"
+          name="apartament"
+          id="apartament"
+          placeholder="Apartament,suite,etc."
+        />
+        <br /><br />
+        <select name="country" id="country">
+          <option selected disabled>Country</option>
+          <option value="Romania">Romania</option>
+          <option value="Moldova">Moldova</option>
+          <option value="Ukraine">Ukraine</option>
+        </select>
+        <select id="city" name="city">
+          <option selected disabled>Select a city</option>
+        </select>
+        <input
+          type="text"
+          name="zipcode"
+          id="zipcode"
+          placeholder="Zipcode"
+        /><br /><br />
+        <input
+          type="text"
+          name="optional"
+          id="optional"
+          placeholder="Optional"
+        /><br /><br />
+        <input
+          type="checkbox"
+          name="savecontact"
+          id="savecontact"
+          value="savecontact"
+        />
+        <label for="savecontact">Save contact information</label>
+      </fieldset>
+      <fieldset>
+        <legend>Payment</legend>
+        <a href="https://paypal.com" target="_blank">
+          <img src="photo/paypal.png" alt="image.png" height="30" width="50" />
+        </a>
+        <button>Cash</button><br /><br />
+        <input
+          type="text"
+          name="cardname"
+          id="cardname"
+          placeholder="Cardholder Name"
+        /><br /><br />
+        <input
+          type="text"
+          name="cardnumber"
+          id="cardnumber"
+          placeholder="Card Number"
+        />
+        <br /><br />
+        <select name="month" id="month">
+          <option selected disabled>Month</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select name="year" id="year">
+          <option selected disabled>Year</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>
+        <input type="text" name="cvc" id="cvc" placeholder="CVC" /><br /><br />
+        <input type="checkbox" name="savecard" id="savecard" value="savecard" />
+        <label for="savecard">Save card data for future payments</label>
+      </fieldset>
+      <br /><br />
+      <button type="submit">Pay with card</button>
+    </form>
+  </body>
+</html>
