@@ -3,21 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Home-Page</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header>
-      <img src="photo/logo.jpeg" alt="Logo" width="60" height="60" />
-      <a href="https://www.davas.com/wishlist">
-        <img src="photo/wishlist.png" alt="wishlist" width="30" height="30" />
-      </a>
-      <a href="https://www.davas.com/cart">
-        <img src="photo/cart.png" alt="cart" width="30" height="30" />
-      </a>
-      <a href="https://www.davas.com/profile">
-        <img src="photo/profile.png" alt="profile" width="30" height="30" />
-      </a>
+      <div class="top-row">
+        <div class="logo">
+          <img src="./img/logo.png" alt="Davas Logo" width="100" height="100" />
+        </div>
+        <div class="search-bar">
+          <form action="/search" method="get">
+            <input type="search" name="query" placeholder="Caută..." />
+            <button type="submit">Caută</button>
+          </form>
+        </div>
+        <div class="user-icons">
+          <a id="wishlist" href="https://www.davas.com/wishlist">
+            <img
+              src="./img/wishlist.png"
+              alt="wishlist"
+              width="30"
+              height="30"
+            />
+          </a>
+          <a id="cart" href="https://www.davas.com/cart">
+            <img src="./img/cart.png" alt="cart" width="30" height="30" />
+          </a>
+          <a id="profile" href="https://www.davas.com/profile">
+            <img src="./img/profile.png" alt="profile" width="30" height="30" />
+          </a>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="#"> Home </a></li>
+          <li><a href="#"> Categories </a></li>
+          <li><a href="#"> Shop </a></li>
+          <li><a href="#"> About </a></li>
+          <li><a href="#"> Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <main></main>
 
@@ -28,10 +54,10 @@
         <li>Despre noi</li>
       </ul>
       <a href="https://www.facebook.com/davas">
-        <img src="photo/facebook.png" alt="facebook" width="30" height="30" />
+        <img src="./img/facebook.png" alt="facebook" width="30" height="30" />
       </a>
       <a href="https://www.instagram.com/davas">
-        <img src="photo/instagram.png" alt="instagram" width="30" height="30" />
+        <img src="./img/instagram.png" alt="instagram" width="30" height="30" />
       </a>
     </footer>
   </body>
