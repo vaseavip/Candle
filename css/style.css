@@ -6,8 +6,9 @@
 }
 
 body {
-  background: linear-gradient(135deg, #635d51, #e4dcc19a);
+  background: linear-gradient(135deg, #f3ede2, #c2a98e);
   height: 100vh;
+  background-size: 400% 400%;
 }
 
 header {
@@ -83,4 +84,43 @@ header {
 
 .nav-links a:hover {
   opacity: 0.6;
+}
+.reclama {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+#link1 {
+  text-decoration: none;
+  color: #520202c5;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 24px;
+  border: #000 1px solid;
+  border-radius: 10px;
+  padding: 1%;
+}
+.text {
+  display: flex;
+}
+#text1 {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 24px;
+  color: #520202c5;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
