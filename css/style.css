@@ -124,3 +124,73 @@ header {
   gap: 20px;
   padding: 20px;
 }
+.product-card {
+  border: 1px solid #ada8a8;
+
+  padding: 10px;
+  text-align: center;
+  background-color: #e0adad8a;
+}
+.product-card img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+.product-card button {
+  margin-top: 20px;
+  background-color: #c2a98e;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.product-card p {
+  color: #555;
+  font-size: 14px;
+}
+.reclama2 {
+  margin: auto;
+  display: block;
+  margin: auto;
+  width: 90%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.reclama2 a {
+  background: #c2a98e;
+  text-decoration: none;
+  color: #520202c5;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  font-size: 24px;
+  border: #000 1px solid;
+  border-radius: 10px;
+  padding: 1%;
+}
+.reclama2 h2 {
+  text-decoration: none;
+  color: #f8f8f8c5;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  font-size: 24px;
+}
+.reclama2 img {
+  width: 100%;
+  border-radius: 50px;
+}
