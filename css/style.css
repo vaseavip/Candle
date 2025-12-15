@@ -6,7 +6,9 @@
 }
 
 body {
-  background: linear-gradient(135deg, #f3ede2, #c2a98e);
+  background: linear-gradient(135deg, #fdf6f0, #fff1e6);
+  font-family: 'Poppins', sans-serif;
+  color: #4b3f36; /* text cald, ușor maro */
   height: 100vh;
   background-size: 400% 400%;
 }
@@ -38,13 +40,14 @@ header {
 
 /* Stil pentru input */
 .search-bar input {
-  padding: 8px 12px;
+  padding: 15px 100px;
   border-radius: 4px;
   border: 1px solid #555;
 }
 
 .search-bar button {
-  padding: 8px 12px;
+  border-radius: 4px;
+  padding: 13px 20px;
   margin-left: 5px;
   cursor: pointer;
 }
@@ -52,7 +55,7 @@ header {
 /* User icons în dreapta */
 .user-icons {
   display: flex;
-  gap: 15px;
+  gap: 25px;
   margin-right: 40px;
   align-items: center;
 }
@@ -60,7 +63,8 @@ header {
 /* --- RÂNDUL 2 - MENIU --- */
 
 .nav-links {
-  border: 2px solid #000;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #242323;
   padding: 1% 2%;
   margin-top: 0px;
   margin-left: 0px; /* se aliniază sub logo */
@@ -79,17 +83,15 @@ header {
   text-decoration: none;
   font-size: 18px;
   color: #000;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.nav-links a:hover {
-  opacity: 0.6;
-}
 .reclama {
   display: inline-block;
   margin: auto;
   width: 100%;
-  height: auto;
+
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
@@ -98,7 +100,7 @@ header {
   text-decoration: none;
   color: #520202c5;
   font-weight: bold;
-  display: inline-block;
+
   position: absolute;
   top: 10%;
   right: 10%;
@@ -121,20 +123,20 @@ header {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 30px;
   padding: 20px;
 }
 .product-card {
-  border: 1px solid #ada8a8;
+  border: 1px solid #a67c52;
 
-  padding: 10px;
+  padding: 0px;
   text-align: center;
-  background-color: #e0adad8a;
+  background-color: #fff8f0;
 }
 .product-card img {
-  max-width: 80%;
+  margin-top: 15px;
+  width: 90%;
   height: auto;
-  border-radius: 10px;
 }
 .product-card h3 {
   margin: 10px 0;
@@ -142,24 +144,23 @@ header {
   color: #333;
 }
 .product-card button {
-  margin-top: 20px;
-  background-color: #c2a98e;
-  color: #fff;
-  border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #070707;
+  color: #080808;
+
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 .product-card p {
-  color: #555;
+  color: #000000;
   font-size: 14px;
 }
 .reclama2 {
   margin: auto;
   display: block;
-  margin: auto;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -192,5 +193,45 @@ header {
 }
 .reclama2 img {
   width: 100%;
-  border-radius: 50px;
+}
+footer {
+  background: #d9b38c;
+}
+.foter {
+  display: flex; /* face copii pe orizontală */
+  justify-content: space-between; /* lista la stânga, iconițele la dreapta */
+  align-items: center; /* vertical centrat */
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.foterlinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.footerlinks ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.footerlinks ul li {
+  display: inline-block;
+}
+.footercontact {
+  display: flex;
+}
+.footercontact img {
+  margin-right: 10px;
+}
+.footerlinks a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
 }
