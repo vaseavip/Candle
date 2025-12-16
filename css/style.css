@@ -42,12 +42,19 @@ header {
     flex-wrap: nowrap;
     margin-top: 8px;
   }
+  .searcj-bar form {
+    display: flex;
+    width: 100%;
+  }
   .search-bar input {
+    width: auto;
     flex: 1 1 auto;
     min-width: 0;
+    padding: 10px 12px;
   }
   .search-bar button {
     flex-shrink: 0;
+    white-space: nowrap;
   }
 }
 
