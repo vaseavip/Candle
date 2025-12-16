@@ -97,10 +97,14 @@ header {
 }
 
 .search-bar button {
+  background-color: #eee9e9;
   border-radius: 4px;
   padding: 10px 10px;
   margin-left: 5px;
   cursor: pointer;
+}
+.search-bar button:hover {
+  background-color: #f1c8c8;
 }
 
 /* User icons în dreapta */
@@ -118,9 +122,9 @@ header {
 .nav-links {
   border-top: 1px solid #111111;
   border-bottom: 1px solid #242323;
-  padding: 1% 2%;
+  padding: 10px 10px;
   margin-top: 0px;
-  margin-left: 0px; /* se aliniază sub logo */
+  margin-left: 0px;
 }
 
 .nav-links ul {
@@ -139,6 +143,7 @@ header {
 .nav-links li {
   display: flex;
   margin: 10px;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-links a {
@@ -149,6 +154,12 @@ header {
   font-family: 'Montserrat', sans-serif;
 }
 
+.nav-links li:hover {
+  background-color: #f1c8c8;
+  border-radius: 5px;
+  padding: 2px;
+  border-bottom-color: #000;
+}
 .reclama {
   display: block;
   margin: auto;
@@ -164,6 +175,7 @@ header {
 }
 
 #link1 {
+  background-color: #d3c1c1;
   text-decoration: none;
   color: #520202c5;
   font-weight: bold;
@@ -175,6 +187,9 @@ header {
   border: #000 1px solid;
   border-radius: 10px;
   padding: 1%;
+}
+#link1:hover {
+  background-color: #f1c8c8;
 }
 @media (max-width: 768px) {
   #link1 {
@@ -228,6 +243,7 @@ header {
   color: #333;
 }
 .product-card button {
+  background-color: #eee9e9;
   width: 90%;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -237,6 +253,9 @@ header {
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+}
+.product-card button:hover {
+  background-color: #f1c8c8;
 }
 .product-card p {
   color: #000000;
@@ -265,6 +284,9 @@ header {
   border: #000 1px solid;
   border-radius: 10px;
   padding: 1%;
+}
+.reclama2 a:hover {
+  background-color: #f1c8c8;
 }
 .reclama2 h2 {
   text-decoration: none;
