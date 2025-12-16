@@ -24,43 +24,48 @@ header {
   justify-content: space-between;
   flex-wrap: wrap; /* pentru ecrane mici */
 }
-@media (max-width: 768px) {
+@media (max-width: 580px) {
   .top-row {
+    display: flex;
     flex-wrap: wrap;
+    align-items: center;
   }
   .logo {
     order: 1;
+    margin-left: 0;
   }
   .user-icons {
     order: 2;
   }
   .search-bar {
     order: 3;
-    display: flex;
-    margin-top: 8px;
+
+    margin-top: 10px;
     width: 100%;
-    flex-wrap: nowrap;
-    margin-top: 8px;
+    display: flex;
+    justify-content: center;
   }
-  .searcj-bar form {
+  .search-bar form {
     display: flex;
     width: 100%;
+    max-width: 500px;
   }
   .search-bar input {
     width: auto;
-    flex: 1 1 auto;
+    flex: 1;
     min-width: 0;
     padding: 10px 12px;
   }
   .search-bar button {
     flex-shrink: 0;
     white-space: nowrap;
+    padding: 10px 14px;
   }
 }
 
 /* Logo în stânga */
 .logo {
-  margin-left: 40px;
+  margin-left: 30px;
   display: flex;
   align-items: center;
 }
@@ -74,6 +79,11 @@ header {
   width: 90%;
   flex: 1; /* permite centrare între logo și icons */
   display: flex;
+  justify-content: center;
+}
+.search-bar form {
+  display: flex;
+  width: 100%;
   justify-content: center;
 }
 
@@ -95,7 +105,7 @@ header {
 
 /* User icons în dreapta */
 .user-icons {
-  margin-right: 0;
+  margin-right: 30px;
   display: flex;
   gap: 25px;
 
@@ -309,7 +319,7 @@ footer {
   display: flex;
 }
 .footercontact img {
-  margin-right: 10px;
+  margin: 20px 10px 20px 10px;
 }
 .footerlinks a {
   text-decoration: none;
