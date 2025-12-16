@@ -116,6 +116,10 @@ header {
   align-items: center;
   justify-content: center;
 }
+.user-icons img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
 
 /* --- RÂNDUL 2 - MENIU --- */
 
@@ -157,7 +161,7 @@ header {
 .nav-links li:hover {
   background-color: #f1c8c8;
   border-radius: 5px;
-  padding: 2px;
+
   border-bottom-color: #000;
 }
 .reclama {
@@ -349,7 +353,18 @@ footer {
   color: #000;
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
+  border-bottom: 2px solid transparent;
+}
+.footerlinks a:hover {
+  background-color: #f1c8c8;
+  border-radius: 5px;
+
+  border-bottom-color: #000;
 }
 footer a img {
   margin: 5px;
+}
+footer a img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
