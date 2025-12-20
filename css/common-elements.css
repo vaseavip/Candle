@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to right,
+    hsla(178, 34%, 86%, 1) 0%,
+    hsla(180, 25%, 92%, 1) 64%,
+    hsla(190, 27%, 96%, 1) 100%
+  );
+}
+button {
+  padding: 5px 10px;
+  border: 1px solid #646464;
+  background-color: none;
+  color: black;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+}
+button:hover {
+  background-color: #686a6b54;
+
+  color: white;
+  box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
+}

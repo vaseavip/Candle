@@ -4,47 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home-Page</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/style.css" />-->
+    <link rel="stylesheet" href="./css/common-elements.css" />
+    <link rel="stylesheet" href="./css/header-footer.css" />
   </head>
   <body>
     <header>
-      <div class="top-row">
-        <div class="logo">
-          <img src="./img/logo.png" alt="Davas Logo" width="100" height="100" />
-        </div>
-        <div class="search-bar">
-          <form action="/search" method="get">
-            <input type="search" name="query" placeholder="Caută..." />
-            <button type="submit">Caută</button>
-          </form>
-        </div>
-        <div class="user-icons">
-          <a id="wishlist" href="https://www.davas.com/wishlist">
-            <img
-              src="./img/wishlist.png"
-              alt="wishlist"
-              width="30"
-              height="30"
-            />
-          </a>
-          <a id="cart" href="https://www.davas.com/cart">
-            <img src="./img/cart.png" alt="cart" width="30" height="30" />
-          </a>
-          <a id="profile" href="https://www.davas.com/profile">
-            <img src="./img/profile.png" alt="profile" width="30" height="30" />
-          </a>
-        </div>
+      <div class="logo-top">
+        <a href="./index.html">
+          <img id="logo" src="./img/logo.png" alt="Logo" />
+        </a>
       </div>
-      <nav class="nav-links">
+      <nav>
         <ul>
-          <li><a href="#"> Home </a></li>
-          <li><a href="#"> Categories </a></li>
-          <li><a href="#"> Shop </a></li>
-          <li><a href="#"> About </a></li>
-          <li><a href="#"> Contact</a></li>
+          <li><a href="./index.html"> Home </a></li>
+          <li><a href="http://davas.com/cat"> Categories </a></li>
+          <li><a href="http://davas.com/shop"> Shop </a></li>
+          <li><a href="http://davas.com/about"> About </a></li>
+          <li><a href="http://davas.com/contact"> Contact</a></li>
         </ul>
       </nav>
+      <div class="search-form">
+        <form action="/search" method="get">
+          <input type="search" name="query" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="topicon">
+        <a href="https://www.davas.com/wishlist">
+          <img src="./img/wishlist.png" alt="wishlist" width="30" height="30" />
+        </a>
+
+        <a href="https://www.davas.com/cart">
+          <img src="./img/cart.png" alt="cart" width="30" height="30" />
+        </a>
+        <a href="https://www.davas.com/profile">
+          <img src="./img/profile.png" alt="profile" width="30" height="30" />
+        </a>
+      </div>
     </header>
+
     <main>
       <section class="reclama">
         <img
@@ -101,11 +100,12 @@
 
     <footer>
       <div class="foter">
+        <p>© 2025 Davas Studio</p>
         <div class="footerlinks">
           <ul>
-            <li><a href="#">Mai multe</a></li>
-            <li><a href="#">Metoda de plata</a></li>
-            <li><a href="#">Despre noi</a></li>
+            <li><a href="#"> Terms of Use</a></li>
+            <li><a href="#">Payment Method</a></li>
+            <li><a href="#">Data protection</a></li>
           </ul>
         </div>
         <div class="footercontact">

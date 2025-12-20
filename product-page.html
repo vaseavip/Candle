@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Davas-HandMade</title>
     <link rel="icon" href="./img/logo.png" type="image/png" sizes="16x16" />
+    <link rel="stylesheet" href="./css/common-elements.css" />
+    <link rel="stylesheet" href="./css/header-footer.css" />
     <link rel="stylesheet" href="./css/product-page.css" />
   </head>
   <body>
     <header>
-      <img src="./img/logo.png" alt="Logo" width="60" height="60" />
+      <div class="logo-top">
+        <a href="./index.html">
+          <img id="logo" src="./img/logo.png" alt="Logo" />
+        </a>
+      </div>
       <nav>
         <ul>
-          <li><a href="http://davas.com"> Home </a></li>
+          <li><a href="./index.html"> Home </a></li>
           <li><a href="http://davas.com/cat"> Categories </a></li>
           <li><a href="http://davas.com/shop"> Shop </a></li>
           <li><a href="http://davas.com/about"> About </a></li>
@@ -21,8 +27,8 @@
       </nav>
       <div class="search-form">
         <form action="/search" method="get">
-          <input type="search" name="query" placeholder="Caută..." />
-          <button type="submit">Caută</button>
+          <input type="search" name="query" placeholder="Search..." />
+          <button type="submit">Search</button>
         </form>
       </div>
       <div class="topicon">
@@ -41,93 +47,117 @@
 
     <hr />
     <main>
-      <article>
-        <h1>Lumanare "Home"</h1>
-        <p>Rating: ★★★★☆ (4.5/5)</p>
-        <br />
-        <img src="./img/lum1.webp" alt="produs" width="500" height="500" />
-        <h2>Pret - 50 Lei</h2>
-        <p>Disponibil - <strong>da</strong></p>
-        <p>Descriere scurta - Lumanare cu design "Home" efectuata manual</p>
-        <button>-</button><button>1</button><button>+</button><br />
-        <button>Adauga in cos - 50 lei</button>
-        <a href="https://www.davas.com/wishlist">
-          <img src="./img/wishlist.png" alt="wishlist" width="30" height="30" />
-        </a>
-        <br />
-        <h2>Mai multe imagini</h2>
-        <img src="./img/lum2.webp" alt="poza2" width="100" height="100" />
-        <img src="./img/lum3.webp" alt="poza3" width="100" height="100" />
-        <img src="./img/lum4.webp" alt="poza4" width="100" height="100" />
-        <h2>Descrierea Produsului</h2>
-        <p>
-          Lumânare handmade realizată din ceară naturală, turnată manual în
-          loturi mici. Oferă o aromă plăcută și o lumină caldă, ideală pentru
-          relaxare sau decor. Fitil din bumbac pentru ardere curată și uniformă.
-        </p>
-        <h2>Caracteristici</h2>
-        <table border="1">
-          <tr>
-            <th>Caracteristică</th>
-            <th>Detalii</th>
-          </tr>
+      <article class="product">
+        <div class="container1">
+          <figure class="product-image">
+            <img src="./img/lum1.webp" alt="produs" />
+          </figure>
+          <h2>Mai multe imagini</h2>
+          <div class="moreimage">
+            <img src="./img/lum2.webp" alt="poza2" width="100" height="100" />
+            <img src="./img/lum3.webp" alt="poza3" width="100" height="100" />
+            <img src="./img/lum4.webp" alt="poza4" width="100" height="100" />
+          </div>
+        </div>
+        <div class="container2">
+          <h1>Lumanare "Home"</h1>
+          <p class="rating">Rating: ★★★★☆ (4.5/5)</p>
+          <br />
 
-          <tr>
-            <td>Material</td>
-            <td>Ceară naturală (soia / albine)</td>
-          </tr>
+          <h2 class="pince">Pret - 50 Lei</h2>
+          <p class="avaible">Disponibil - <strong>da</strong></p>
+          <p class="description">
+            Descriere scurta - Lumanare cu design "Home" efectuata manual
+          </p>
+          <div class="buttonprodus">
+            <button>-</button><button>1</button><button>+</button><br />
+          </div>
+          <button>Adauga in cos - 50 lei</button>
 
-          <tr>
-            <td>Tip fitil</td>
-            <td>Bumbac 100% fără fum</td>
-          </tr>
+          <a class="wishimg" href="https://www.davas.com/wishlist">
+            <img
+              src="./img/wishlist.png"
+              alt="wishlist"
+              width="30"
+              height="30"
+            />
+          </a>
+          <br />
+        </div>
+        <div class="container3">
+          <h2>Descrierea Produsului</h2>
+          <p>
+            Lumânare handmade realizată din ceară naturală, turnată manual în
+            loturi mici. Oferă o aromă plăcută și o lumină caldă, ideală pentru
+            relaxare sau decor. Fitil din bumbac pentru ardere curată și
+            uniformă.
+          </p>
+          <h2>Caracteristici</h2>
+          <table border="1">
+            <tr>
+              <th>Caracteristică</th>
+              <th>Detalii</th>
+            </tr>
 
-          <tr>
-            <td>Greutate</td>
-            <td>150 g</td>
-          </tr>
+            <tr>
+              <td>Material</td>
+              <td>Ceară naturală (soia / albine)</td>
+            </tr>
 
-          <tr>
-            <td>Înălțime</td>
-            <td>8 cm</td>
-          </tr>
+            <tr>
+              <td>Tip fitil</td>
+              <td>Bumbac 100% fără fum</td>
+            </tr>
 
-          <tr>
-            <td>Durată ardere</td>
-            <td>25-30 ore</td>
-          </tr>
+            <tr>
+              <td>Greutate</td>
+              <td>150 g</td>
+            </tr>
 
-          <tr>
-            <td>Aromă</td>
-            <td>Vanilie / Lavandă / Floral</td>
-          </tr>
+            <tr>
+              <td>Înălțime</td>
+              <td>8 cm</td>
+            </tr>
 
-          <tr>
-            <td>Culoare</td>
-            <td>Alb natural</td>
-          </tr>
+            <tr>
+              <td>Durată ardere</td>
+              <td>25-30 ore</td>
+            </tr>
 
-          <tr>
-            <td>Realizare</td>
-            <td>Handmade, turnare manuală</td>
-          </tr>
-        </table>
-        <h2>Recenzii</h2>
-        <p>
-          <strong>★★★★☆ (4.5/5)</strong> "Foarte frumoasa,se combina perfect cu
-          casa mea" - <strong>Alex</strong>
-        </p>
-        <p>
-          <strong>★★★★☆ (4/5)</strong>"Pur si simplu extraordinara" -
-          <strong>Ana</strong>"
-        </p>
+            <tr>
+              <td>Aromă</td>
+              <td>Vanilie / Lavandă / Floral</td>
+            </tr>
+
+            <tr>
+              <td>Culoare</td>
+              <td>Alb natural</td>
+            </tr>
+
+            <tr>
+              <td>Realizare</td>
+              <td>Handmade, turnare manuală</td>
+            </tr>
+          </table>
+          <h2>Recenzii</h2>
+          <p>
+            <strong>★★★★☆ (4.5/5)</strong> "Foarte frumoasa,se combina perfect
+            cu casa mea" - <strong>Alex</strong>
+          </p>
+          <p>
+            <strong>★★★★☆ (4/5)</strong>"Pur si simplu extraordinara" -
+            <strong>Ana</strong>
+          </p>
+        </div>
       </article>
       <section>
-        <button>Descriere</button><button>Specificatii</button
-        ><button>Recenzii</button>
+        <button>Descriere</button>
+        <button>Specificatii</button>
+        <button>Recenzii</button>
         <hr />
       </section>
-      <section>
+
+      <section class="similarprodus">
         <h2>Produsuri Similare</h2>
         <ul class="lista-produse">
           <li>
@@ -149,17 +179,34 @@
     </main>
     <hr />
     <footer>
-      <ul>
-        <li>Mai multe</li>
-        <li>Metoda de plata</li>
-        <li>Despre noi</li>
-      </ul>
-      <a href="https://www.facebook.com/davas">
-        <img src="./img/facebook.png" alt="facebook" width="30" height="30" />
-      </a>
-      <a href="https://www.instagram.com/davas">
-        <img src="./img/instagram.png" alt="instagram" width="30" height="30" />
-      </a>
+      <div class="foter">
+        <p>© 2025 Davas Studio</p>
+        <div class="footerlinks">
+          <ul>
+            <li><a href="#"> Terms of Use</a></li>
+            <li><a href="#">Payment Method</a></li>
+            <li><a href="#">Data protection</a></li>
+          </ul>
+        </div>
+        <div class="footercontact">
+          <a href="https://www.facebook.com/davas">
+            <img
+              src="./img/facebook.png"
+              alt="facebook"
+              width="30"
+              height="30"
+            />
+          </a>
+          <a href="https://www.instagram.com/davas">
+            <img
+              src="./img/instagram.png"
+              alt="instagram"
+              width="30"
+              height="30"
+            />
+          </a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
