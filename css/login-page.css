@@ -1,18 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
-}
-body {
-  background: linear-gradient(135deg, #635d51, #e4dcc19a);
+main {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .login-container {
-  background: rgba(255, 255, 255, 0.15);
   padding: 40px;
   width: 100%;
   max-width: 380px;
@@ -82,9 +74,4 @@ h2 {
 }
 .links a:hover {
   color: #d1d1d1;
-}
-@media (max-width: 420px) {
-  .login-container {
-    padding: 30px 25px;
-  }
 }

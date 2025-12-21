@@ -5,27 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login-Page</title>
     <link rel="icon" href="./img/logo.png" type="image/png" sizes="16x16" />
+    <link rel="stylesheet" href="./css/header-footer.css" />
+    <link rel="stylesheet" href="./css/common-elements.css" />
     <link rel="stylesheet" href="./css/login-page.css" />
   </head>
   <body>
-    <div class="login-container">
-      <h2>Login</h2>
-      <form action="#" method="POST">
-        <div class="input-grup">
-          <label for="email">Email</label>
-          <input type="email" placeholder="example@mail.com" />
+    <header>
+      <div class="logo-top">
+        <a href="./index.html">
+          <img id="logo" src="./img/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./index.html"> Home </a></li>
+          <li><a href="http://davas.com/cat"> Categories </a></li>
+          <li><a href="http://davas.com/shop"> Shop </a></li>
+          <li><a href="http://davas.com/about"> About </a></li>
+          <li><a href="http://davas.com/contact"> Contact</a></li>
+        </ul>
+      </nav>
+      <div class="search-form">
+        <form action="/search" method="get">
+          <input type="search" name="query" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="topicon">
+        <a href="https://www.davas.com/wishlist">
+          <img src="./img/wishlist.png" alt="wishlist" width="30" height="30" />
+        </a>
+
+        <a href="https://www.davas.com/cart">
+          <img src="./img/cart.png" alt="cart" width="30" height="30" />
+        </a>
+        <a href="https://www.davas.com/profile">
+          <img src="./img/profile.png" alt="profile" width="30" height="30" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+          <div class="input-grup">
+            <label for="email">Email</label>
+            <input type="email" placeholder="example@mail.com" />
+          </div>
+          <div class="input-grup">
+            <label for="password">Password</label>
+            <input type="password" placeholder="enter the password" />
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="links">
+            <a href="#">Forgot your password?</a>
+            <br />
+            <a href="#">Create account</a>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="foter">
+        <p>© 2025 Davas Studio</p>
+        <div class="footerlinks">
+          <ul>
+            <li><a href="#"> Terms of Use</a></li>
+            <li><a href="#">Payment Method</a></li>
+            <li><a href="#">Data protection</a></li>
+          </ul>
         </div>
-        <div class="input-grup">
-          <label for="password">Password</label>
-          <input type="password" placeholder="enter the password" />
+        <div class="footercontact">
+          <a href="https://www.facebook.com/davas">
+            <img
+              src="./img/facebook.png"
+              alt="facebook"
+              width="30"
+              height="30"
+            />
+          </a>
+          <a href="https://www.instagram.com/davas">
+            <img
+              src="./img/instagram.png"
+              alt="instagram"
+              width="30"
+              height="30"
+            />
+          </a>
         </div>
-        <button type="submit" class="btn">Login</button>
-        <div class="links">
-          <a href="#">Forgot your password?</a>
-          <br />
-          <a href="#">Create account</a>
-        </div>
-      </form>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -6,12 +6,19 @@
 }
 
 header {
+  background: linear-gradient(
+    to right,
+    rgb(244, 211, 202) 0%,
+    hsla(180, 25%, 92%, 1) 64%,
+    hsla(190, 27%, 96%, 1) 100%
+  );
   display: flex;
   align-items: center;
   font-family: 'Roboto', sans-serif;
   justify-content: space-between;
   margin-left: 50px;
   margin-right: 50px;
+  border-radius: 20px;
 }
 .topicon {
   display: flex;
@@ -77,6 +84,13 @@ hr {
   border-top: 1px solid #ccc;
 }
 .foter {
+  background: linear-gradient(
+    to right,
+    rgb(244, 211, 202) 0%,
+    hsla(180, 25%, 92%, 1) 64%,
+    hsla(190, 27%, 96%, 1) 100%
+  );
+  border-radius: 20px;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
   display: flex;
