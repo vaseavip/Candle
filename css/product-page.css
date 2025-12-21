@@ -1,4 +1,5 @@
 .product {
+  font-family: 'Cause', sans-serif;
   width: auto;
 
   display: grid;
@@ -21,12 +22,13 @@
 .product-image {
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 80%;
   display: block;
 }
 .product-image img {
   width: 100%;
-  height: auto;
+
+  height: 80%;
   display: block;
   border-radius: 20px 20px 0 0;
 }
@@ -35,7 +37,9 @@
   margin-bottom: 10px;
   gap: 20px;
 }
-
+.product h2 {
+  margin-bottom: 20px;
+}
 .container2 {
   background-color: rgba(245, 242, 237, 0.452);
   display: flex;
@@ -111,7 +115,10 @@
   padding-top: 20px;
 }
 .descrierea p {
-  padding-top: 20px;
+  padding: 20px;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 20px;
+  background-color: rgba(153, 249, 249, 0.34);
 }
 .recenzii {
   grid-column: 1 / span 2;

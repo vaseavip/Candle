@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Cause';
+  src: url('../fonts/Cause-VariableFont_wght.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +13,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(
     to right,
-    hsla(178, 34%, 86%, 1) 0%,
+    rgb(231, 223, 207) 0%,
     hsla(180, 25%, 92%, 1) 64%,
     hsla(190, 27%, 96%, 1) 100%
   );
