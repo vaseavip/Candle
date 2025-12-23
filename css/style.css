@@ -1,174 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #f1f0ee, #ffd3d1);
-  font-family: 'Poppins', sans-serif;
-  color: #4b3f36; /* text cald, ușor maro */
-  height: 100vh;
-  background-size: 400% 400%;
-}
-
-header {
-  padding: 20px;
-}
-
-/* --- RÂNDUL 1 --- */
-.top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* pentru ecrane mici */
-}
-@media (max-width: 580px) {
-  .top-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .logo {
-    order: 1;
-    margin-left: 0;
-  }
-  .user-icons {
-    order: 2;
-  }
-  .search-bar {
-    order: 3;
-
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .search-bar form {
-    display: flex;
-    width: 100%;
-    max-width: 500px;
-  }
-  .search-bar input {
-    width: auto;
-    flex: 1;
-    min-width: 0;
-    padding: 10px 12px;
-  }
-  .search-bar button {
-    flex-shrink: 0;
-    white-space: nowrap;
-    padding: 10px 14px;
-  }
-}
-
-/* Logo în stânga */
-.logo {
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-}
-.logo img {
-  max-width: 80px;
-  height: auto;
-}
-
-/* Search bar în centru */
-.search-bar {
-  width: 90%;
-  flex: 1; /* permite centrare între logo și icons */
-  display: flex;
-  justify-content: center;
-}
-.search-bar form {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-/* Stil pentru input */
-.search-bar input {
-  width: 60%;
-  max-width: none;
-  padding: 13px 100px;
-  border-radius: 4px;
-  border: 1px solid #555;
-}
-
-.search-bar button {
-  background-color: #eee9e9;
-  border-radius: 4px;
-  padding: 10px 10px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-.search-bar button:hover {
-  background-color: #f1c8c8;
-}
-
-/* User icons în dreapta */
-.user-icons {
-  margin-right: 30px;
-  display: flex;
-  gap: 25px;
-
-  align-items: center;
-  justify-content: center;
-}
-.user-icons img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
-}
-
-/* --- RÂNDUL 2 - MENIU --- */
-
-.nav-links {
-  border-top: 1px solid #111111;
-  border-bottom: 1px solid #242323;
-  padding: 10px 10px;
-  margin-top: 0px;
-  margin-left: 0px;
-}
-
-.nav-links ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-}
-@media (max-width: 768px) {
-  .nav-links ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-.nav-links li {
-  display: flex;
-  margin: 10px;
-  border-bottom: 2px solid transparent;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-size: 18px;
-  color: #000;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.nav-links li:hover {
-  background-color: #f1c8c8;
-  border-radius: 5px;
-
-  border-bottom-color: #000;
+main {
+  font-family: 'Cause', sans-serif;
 }
 .reclama {
   display: block;
   margin: auto;
   max-width: 100%;
-
+  border-radius: 20px 20px 0 0;
   width: 90%;
   height: auto;
   margin-top: 20px;
@@ -177,7 +14,10 @@ header {
 
   position: relative;
 }
-
+.reclama img {
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 #link1 {
   background-color: #d3c1c1;
   text-decoration: none;
@@ -189,20 +29,16 @@ header {
   right: 10%;
   font-size: 24px;
   border: #000 1px solid;
-  border-radius: 10px;
+  border-radius: 40px;
   padding: 1%;
 }
 #link1:hover {
-  background-color: #f1c8c8;
+  background-color: #686a6b54;
+
+  color: white;
+  box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
-@media (max-width: 768px) {
-  #link1 {
-    font-size: 16px;
-    top: 5%;
-    right: 5%;
-    padding: 3px 5px;
-  }
-}
+
 .text {
   display: flex;
 }
@@ -212,7 +48,7 @@ header {
   width: 100%;
   font-weight: bold;
   font-size: 24px;
-  color: #520202c5;
+  color: black;
 }
 .product-grid {
   margin-left: 4%;
@@ -222,20 +58,16 @@ header {
   gap: 30px;
   padding: 20px;
 }
-@media (max-width: 400px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-}
-.product-card {
-  border: 1px solid #a67c52;
 
+.product-card {
+  border: 1px solid #b7b2ac;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 0px;
   text-align: center;
-  background-color: #fff8f0;
+  background-color: none;
 }
 .product-card img {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   max-width: 100%;
   margin-top: 15px;
   width: 90%;
@@ -251,15 +83,22 @@ header {
   width: 90%;
   margin-top: 15px;
   margin-bottom: 15px;
-  border: 1px solid #070707;
-  color: #080808;
+  border: 1px solid #646464;
+  background-color: none;
+  color: black;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 
   padding: 10px 15px;
-  border-radius: 5px;
+
   cursor: pointer;
 }
 .product-card button:hover {
-  background-color: #f1c8c8;
+  background-color: #686a6b54;
+
+  color: white;
+  box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
 .product-card p {
   color: #000000;
@@ -274,97 +113,37 @@ header {
   margin-bottom: 20px;
   position: relative;
 }
-
+.reclama2 img {
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 .reclama2 a {
-  background-color: #cac3c3;
+  background-color: #d3c1c1;
   text-decoration: none;
-  color: #111111c5;
+  color: #520202c5;
   font-weight: bold;
-  display: inline-block;
+
   position: absolute;
   bottom: 10%;
-  right: 5%;
-  font-size: 16px;
+  right: 10%;
+  font-size: 24px;
   border: #000 1px solid;
-  border-radius: 10px;
+  border-radius: 40px;
   padding: 1%;
 }
 .reclama2 a:hover {
-  background-color: #f1c8c8;
+  background-color: #686a6b54;
+
+  color: white;
+  box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
 .reclama2 h2 {
   text-decoration: none;
-  color: #f8f8f8c5;
+  color: white;
   font-weight: bold;
   display: inline-block;
   position: absolute;
   top: 10%;
   left: 70%;
   font-size: 24px;
-}
-.reclama2 img {
-  width: 100%;
-}
-footer {
-  background: #d9b38c;
-}
-.foter {
-  display: flex; /* face copii pe orizontală */
-  justify-content: space-between; /* lista la stânga, iconițele la dreapta */
-  align-items: center; /* vertical centrat */
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-}
-@media (max-width: 768px) {
-  .foter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-}
-.foterlinks {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-.footerlinks ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-.footerlinks ul li {
-  display: inline-block;
-}
-.footercontact {
-  display: flex;
-}
-.footercontact img {
-  margin: 20px 10px 20px 10px;
-}
-.footerlinks a {
-  text-decoration: none;
-  font-size: 18px;
-  color: #000;
-  font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
-  border-bottom: 2px solid transparent;
-}
-.footerlinks a:hover {
-  background-color: #f1c8c8;
-  border-radius: 5px;
-
-  border-bottom-color: #000;
-}
-footer a img {
-  margin: 5px;
-}
-footer a img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
 }
