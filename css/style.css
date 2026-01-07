@@ -1,5 +1,10 @@
 main {
   font-family: 'Cause', sans-serif;
+
+  width: 100%;
+  max-width: 1400px;
+  align-items: center;
+  margin: 0 auto;
 }
 .reclama {
   display: block;
@@ -17,6 +22,7 @@ main {
 .reclama img {
   border-radius: 20px 20px 0 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 #link1 {
   background-color: #d3c1c1;
