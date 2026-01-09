@@ -33,7 +33,7 @@ main {
   position: absolute;
   top: 10%;
   right: 10%;
-  font-size: 24px;
+
   border: #000 1px solid;
   border-radius: 40px;
   padding: 1%;
@@ -50,7 +50,7 @@ main {
 }
 #text1 {
   text-align: center;
-  font-size: 18px;
+
   width: 100%;
   font-weight: bold;
   font-size: 24px;
@@ -70,7 +70,7 @@ main {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 0px;
   text-align: center;
-  background-color: none;
+  background-color: transparent;
 }
 .product-card img {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -81,7 +81,7 @@ main {
 }
 .product-card h3 {
   margin: 10px 0;
-  font-size: 18px;
+
   color: #333;
 }
 .product-card button {
@@ -108,7 +108,6 @@ main {
 }
 .product-card p {
   color: #000000;
-  font-size: 14px;
 }
 .reclama2 {
   margin: auto;
@@ -132,7 +131,7 @@ main {
   position: absolute;
   bottom: 10%;
   right: 10%;
-  font-size: 24px;
+
   border: #000 1px solid;
   border-radius: 40px;
   padding: 1%;
@@ -151,5 +150,4 @@ main {
   position: absolute;
   top: 10%;
   left: 70%;
-  font-size: 24px;
 }

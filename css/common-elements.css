@@ -1,16 +1,37 @@
 @font-face {
   font-family: 'Cause';
-  src: url('../fonts/Cause-VariableFont_wght.ttf');
-  font-weight: 400;
+  src: url('../fonts/Cause-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
+
+html {
+  font-size: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Cause', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   background: linear-gradient(
     to right,
     rgb(231, 223, 207) 0%,
@@ -18,19 +39,35 @@ body {
     hsla(190, 27%, 96%, 1) 100%
   );
 }
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  max-width: 65ch;
+}
+
 button {
   font-family: 'Cause', sans-serif;
-  padding: 5px 10px;
+  padding: 0.4em 0.8em;
   border: 1px solid #646464;
-  background-color: none;
+  background-color: transparent;
   color: black;
   border-radius: 40px;
   cursor: pointer;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
+
 button:hover {
   background-color: #686a6b54;
-
   color: white;
   box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
