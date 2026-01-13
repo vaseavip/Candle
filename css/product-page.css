@@ -217,3 +217,16 @@ main {
 .lista-produse li {
   text-align: center;
 }
+@media (max-width: 768px) {
+  .product {
+    grid-template-columns: 1fr; /* o singură coloană */
+    grid-template-rows: auto; /* un rând per element */
+  }
+
+  .container1,
+  .container2,
+  .container3 {
+    grid-column: 1 / -1; /* ocupă întreaga coloană */
+    grid-row: auto; /* automatizează rândul */
+  }
+}
