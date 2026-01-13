@@ -19,10 +19,15 @@ header {
   margin-left: 50px;
   margin-right: 50px;
   border-radius: 20px;
+  flex-wrap: wrap;
 }
 .topicon {
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
+}
+.topicon img {
+  height: 30px;
 }
 header img:hover {
   transform: scale(1.1);
@@ -33,14 +38,15 @@ header img:hover {
   align-items: flex-start;
   justify-content: start;
 }
-#logo {
-  width: 60px;
+.logo-top img {
   height: 60px;
 }
+
 nav ul {
   list-style-type: none;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 nav ul li a {
   text-decoration: none;
@@ -58,16 +64,24 @@ nav ul li a:hover {
 }
 .search-form {
   margin-top: 0px;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
 }
 .search-form input[type='search'] {
-  padding: 5px;
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+  padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 40px;
 }
 .search-form button {
+  white-space: nowrap;
   padding: 5px 10px;
   border: 1px solid #646464;
-  background-color: none;
+  background-color: transparent;
   color: black;
   border-radius: 40px;
   cursor: pointer;
@@ -75,7 +89,7 @@ nav ul li a:hover {
 }
 .search-form button:hover {
   background-color: #686a6b54;
-
+  transform: scale(1.05);
   color: white;
   box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
@@ -95,6 +109,7 @@ hr {
   padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-left: 50px;
@@ -104,6 +119,7 @@ hr {
   list-style-type: none;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 .footerlinks ul li a {
   text-decoration: none;
@@ -115,6 +131,9 @@ hr {
 .footercontact {
   display: flex;
   gap: 25px;
+}
+.footercontact img {
+  height: 30px;
 }
 .footerlinks ul li a:hover {
   background-color: #686a6b54;

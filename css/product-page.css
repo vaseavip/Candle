@@ -14,12 +14,11 @@ main {
 .product {
   font-family: 'Cause', sans-serif;
   width: auto;
-
+  margin: 3%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 10px;
-  margin: 20px 50px;
 
   box-sizing: border-box;
 }
@@ -49,6 +48,7 @@ main {
 }
 .moreimage {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
   gap: 20px;
 }
@@ -74,6 +74,7 @@ main {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .size-form input[type='radio'] {
@@ -97,18 +98,18 @@ main {
   gap: 10px;
 }
 .cart {
-  position: absolute;
-  left: 30%;
-  bottom: 10%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 16px;
+  padding-right: 5%;
 }
 .guaranted {
-  width: 100%;
+  width: auto;
 }
 .guaranted img {
-  width: 30%;
+  width: 5rem;
 }
 .cart button {
   padding: 10px 30px;
@@ -116,6 +117,9 @@ main {
 .cart img:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
+}
+.wishimg img {
+  width: 2.5rem;
 }
 .container3 {
   background-color: rgba(245, 242, 237, 0.452);
@@ -150,8 +154,14 @@ main {
   padding-left: 20px;
   padding-top: 20px;
 }
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .features-table {
   width: 100%;
+
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -160,6 +170,8 @@ main {
 .features-table td {
   padding: 6px 10px;
   text-align: left;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .features-table th {
@@ -179,9 +191,7 @@ main {
   background-color: rgba(0, 0, 0, 0.04);
 }
 .similarprodus {
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px;
+  margin: 3%;
   background-color: rgba(245, 242, 237, 0.452);
   border: 1px solid rgb(177, 174, 174);
   border-radius: 0 0 20px 20px;

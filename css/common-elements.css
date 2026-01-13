@@ -57,6 +57,7 @@ p {
 
 button {
   font-family: 'Cause', sans-serif;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
   padding: 0.4em 0.8em;
   border: 1px solid #646464;
   background-color: transparent;
@@ -68,6 +69,7 @@ button {
 
 button:hover {
   background-color: #686a6b54;
+  transform: scale(1.05);
   color: white;
   box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
