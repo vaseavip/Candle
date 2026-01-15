@@ -1,9 +1,12 @@
 main {
   font-family: 'Cause', sans-serif;
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: flex-start; /* formularul nu se întinde */
-  justify-content: space-between;
-  padding: 40px;
+  justify-content: center;
+  margin: 3%;
+
   box-sizing: border-box;
 }
 .checkout-cart {
@@ -72,7 +75,7 @@ main {
 }
 
 .checkout {
-  width: 60%;
+  width: 100%;
 
   padding: 25px;
   border: 1px solid #ddd;
@@ -154,13 +157,16 @@ main {
   transform: scale(1.05);
 }
 
-.checkout .payment-options {
+.payment-options {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 30px;
 }
 
-.checkout .payment-options a img {
+.payment-options img {
+  width: 100px;
+  height: 70px;
   display: block;
   cursor: pointer;
   background: #000;
@@ -177,7 +183,7 @@ main {
 }
 
 .checkout .payment-options button {
-  padding: 15px 50px;
+  padding: 27px 50px;
   border: 1px solid #ccc;
   background: #000;
   color: #eee;

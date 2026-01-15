@@ -77,3 +77,9 @@ h2 {
 .links a:hover {
   color: #d1d1d1;
 }
+@media (max-width: 768px) {
+  main {
+    align-items: flex-start; /* urcă sus */
+    padding-top: 80px; /* aproape de header */
+  }
+}

@@ -49,8 +49,14 @@ main {
 .moreimage {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
   margin-bottom: 10px;
-  gap: 20px;
+}
+.moreimage img {
+  width: 20%;
+  height: auto;
 }
 .product h2 {
   margin-bottom: 20px;
@@ -163,7 +169,7 @@ main {
   width: 100%;
 
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 0.8rem;
 }
 
 .features-table th,
@@ -213,7 +219,10 @@ main {
   display: flex;
   gap: 20px;
 }
-
+.lista-produse li img {
+  width: 30%;
+  height: 50%;
+}
 .lista-produse li {
   text-align: center;
 }
@@ -226,7 +235,11 @@ main {
   .container1,
   .container2,
   .container3 {
+    margin: 0;
     grid-column: 1 / -1; /* ocupă întreaga coloană */
     grid-row: auto; /* automatizează rândul */
+  }
+  .container2 {
+    border-radius: 0; /* elimină colțurile rotunjite */
   }
 }
