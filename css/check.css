@@ -1,0 +1,33 @@
+* {
+  color: black;
+}
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+.form-control,
+.form-select {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.form-control:focus,
+.form-select:focus {
+  background-color: transparent;
+  box-shadow: none;
+  border-color: #ffffff;
+}
+.form-check-input {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.form-check-input:checked {
+  background-color: #fff;
+  border-color: #fff;
+}

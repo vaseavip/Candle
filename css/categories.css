@@ -1,0 +1,36 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6')
+      center/cover no-repeat;
+  color: #fff;
+  padding: 100px 0;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.category-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.badge-custom {
+  background-color: #000;
+}
+.mycontainer {
+  background: rgba(255, 255, 255, 0.08);
+}

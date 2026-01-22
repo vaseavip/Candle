@@ -6,12 +6,7 @@
 }
 
 header {
-  background: linear-gradient(
-    to right,
-    rgb(244, 211, 202) 0%,
-    hsla(180, 25%, 92%, 1) 64%,
-    hsla(190, 27%, 96%, 1) 100%
-  );
+  background: transparent;
   display: flex;
   align-items: center;
   font-family: 'Roboto', sans-serif;
@@ -70,6 +65,7 @@ nav ul li a:hover {
   max-width: 400px;
 }
 .search-form input[type='search'] {
+  background-color: transparent;
   flex: 1;
   max-width: 100%;
   min-width: 0;
@@ -98,12 +94,7 @@ hr {
   border-top: 1px solid #ccc;
 }
 .foter {
-  background: linear-gradient(
-    to right,
-    rgb(244, 211, 202) 0%,
-    hsla(180, 25%, 92%, 1) 64%,
-    hsla(190, 27%, 96%, 1) 100%
-  );
+  background: transparent;
   border-radius: 20px;
   font-family: 'Roboto', sans-serif;
   padding: 20px;

@@ -33,10 +33,12 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   background: linear-gradient(
-    to right,
-    rgb(231, 223, 207) 0%,
-    hsla(180, 25%, 92%, 1) 64%,
-    hsla(190, 27%, 96%, 1) 100%
+    to right top,
+    #395d91,
+    #8571a1,
+    #bb89a9,
+    #e2a9b2,
+    #fdcfc2
   );
 }
 h1 {
