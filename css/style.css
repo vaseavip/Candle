@@ -8,31 +8,44 @@ main {
 }
 
 .reclama {
-  display: block;
+  background-image: url(../img/reclama1.png);
+  height: 70vh; /* înălțime full screen */
+  height: 70vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; /* necesar pentru a poziționa textul absolut */
+  /* display: block; 
   margin: auto;
   max-width: 100%;
   border-radius: 20px 20px 0 0;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 5%;
 
-  position: relative;
+  position: relative;*/
+}
+@media (max-width: 768px) {
+  .reclama {
+    height: 50%; /* sau orice procent din containerul părinte */
+    min-height: 300px; /* ca să nu fie prea mic pe telefoane */
+    background-attachment: scroll; /* fixed nu funcționează bine pe iOS */
+  }
 }
 .reclama img {
-  border-radius: 20px 20px 0 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   max-width: 100%;
 }
 #link1 {
-  background-color: #d3c1c1;
+  background-color: rgba(0, 0, 0, 0.4);
   text-decoration: none;
-  color: #520202c5;
+  color: #070707c5;
   font-weight: bold;
 
   position: absolute;
-  top: 10%;
+  bottom: 15%;
   right: 10%;
 
   border: #000 1px solid;
@@ -71,7 +84,13 @@ main {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 0px;
   text-align: center;
-  background-color: transparent;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 .product-card img {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -86,14 +105,14 @@ main {
   color: #333;
 }
 .product-card button {
-  background-color: #eee9e9;
+  background-color: rgba(0, 0, 0, 0.4);
   width: 90%;
   margin-top: 15px;
   margin-bottom: 15px;
   border: 1px solid #646464;
   background-color: none;
   color: black;
-  border-radius: 40px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 
