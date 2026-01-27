@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 main {
   font-family: 'Cause', sans-serif;
   height: 100vh;
@@ -85,6 +88,10 @@ h2 {
 .links a:hover {
   color: #d1d1d1;
 }
+.container-fluid {
+  padding: 0 !important;
+}
+
 @media (max-width: 768px) {
   main {
     align-items: flex-start; /* urcă sus */
