@@ -47,7 +47,7 @@ nav ul li a {
   text-decoration: none;
   color: black;
 
-  border-radius: 40px;
+  border-radius: 6px;
   padding: 5px 10px;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
@@ -71,7 +71,7 @@ nav ul li a:hover {
   min-width: 0;
   padding: 5px 10px;
   border: 1px solid #ccc;
-  border-radius: 40px;
+  border-radius: 6px;
 }
 .search-form button {
   white-space: nowrap;
@@ -79,7 +79,7 @@ nav ul li a:hover {
   border: 1px solid #646464;
   background-color: transparent;
   color: black;
-  border-radius: 40px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
@@ -134,7 +134,7 @@ footer p {
 .footerlinks ul li a {
   text-decoration: none;
   color: black;
-  border-radius: 40px;
+  border-radius: 6px;
   padding: 5px 10px;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
@@ -159,7 +159,7 @@ footer p {
 .footerlinks1 ul li a {
   text-decoration: none;
   color: black;
-  border-radius: 40px;
+  border-radius: 6px;
   padding: 5px 10px;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }

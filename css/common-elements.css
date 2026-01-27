@@ -32,14 +32,7 @@ body {
   font-family: 'Cause', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background: linear-gradient(
-    to right top,
-    #395d91,
-    #8571a1,
-    #bb89a9,
-    #e2a9b2,
-    #fdcfc2
-  );
+  background: linear-gradient(to right bottom, #3a294f, #8d68aa, #f4d6ff);
 }
 h1 {
   font-size: 2.5rem;
@@ -66,9 +59,9 @@ button {
   font-size: clamp(0.75rem, 2.5vw, 1rem);
   padding: 0.4em 0.8em;
   border: 1px solid #646464;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
   color: black;
-  border-radius: 5px;
+  border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }

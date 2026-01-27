@@ -9,8 +9,13 @@ main {
   padding: 40px;
   width: 100%;
   max-width: 380px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Safari / iOS */
   border-radius: 16px;
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.9s ease;
 }
@@ -26,7 +31,7 @@ main {
 }
 h2 {
   text-align: center;
-  color: rgb(80, 77, 77);
+  color: #fefacd;
   margin-bottom: 30px;
   font-weight: 600;
   font-size: 28px;
@@ -35,7 +40,7 @@ h2 {
   margin-bottom: 20px;
 }
 .input-grup label {
-  color: aliceblue;
+  color: #f0f8ff;
   font-size: 14px;
 }
 .input-grup input {
@@ -54,7 +59,7 @@ h2 {
   margin-top: 10px;
   border: none;
   border-radius: 10px;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.4);
   font-size: 16px;
   font-weight: 600;
   color: #333;
@@ -62,7 +67,10 @@ h2 {
   transition: 0.3s;
 }
 .btn:hover {
-  background: #e2e2e2;
+  background-color: #686a6b54;
+  transform: scale(1.05);
+  color: white;
+  box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
 .links {
   text-align: center;
