@@ -9,13 +9,13 @@ main {
 
 .reclama {
   background-image: url(../img/reclama1.png);
-  height: 70vh; /* înălțime full screen */
   height: 70vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative; /* necesar pentru a poziționa textul absolut */
+  position: relative;
+  overflow: hidden;
   /* display: block; 
   margin: auto;
   max-width: 100%;
@@ -27,13 +27,36 @@ main {
 
   position: relative;*/
 }
+.reclama::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  backdrop-filter: blur(10px); /* blur efectiv */
+  -webkit-backdrop-filter: blur(10px);
+
+  /* zona centrala clară, marginile blurate */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    /* stânga blurată */ rgba(0, 0, 0, 0) 25%,
+    /* centru începe să fie clar */ rgba(0, 0, 0, 0) 75%,
+    /* centru clar */ rgba(0, 0, 0, 1) 100% /* dreapta blurată */
+  );
+}
 @media (max-width: 768px) {
   .reclama {
-    height: 50%; /* sau orice procent din containerul părinte */
-    min-height: 300px; /* ca să nu fie prea mic pe telefoane */
-    background-attachment: scroll; /* fixed nu funcționează bine pe iOS */
+    height: 50vh;
+    min-height: 300px;
+    background-attachment: scroll;
+  }
+
+  .reclama::after {
+    backdrop-filter: blur(6px); /* mai subtil pe mobile */
   }
 }
+
 .reclama img {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   max-width: 100%;
@@ -41,7 +64,7 @@ main {
 #link1 {
   background-color: rgba(0, 0, 0, 0.4);
   text-decoration: none;
-  color: #070707c5;
+  color: white;
   font-weight: bold;
 
   position: absolute;
@@ -55,7 +78,7 @@ main {
 #link1:hover {
   background-color: #686a6b54;
   transform: scale(1.05);
-  color: white;
+  color: black;
   box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
 
@@ -130,22 +153,53 @@ main {
   color: #000000;
 }
 .reclama2 {
-  margin: auto;
-  display: block;
-  width: 90%;
-  height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background-image: url(../img/reclama2.png);
+  height: 70vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
+  overflow: hidden;
+}
+.reclama2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  backdrop-filter: blur(10px); /* blur efectiv */
+  -webkit-backdrop-filter: blur(10px);
+
+  /* zona centrala clară, marginile blurate */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    /* stânga blurată */ rgba(0, 0, 0, 0) 25%,
+    /* centru începe să fie clar */ rgba(0, 0, 0, 0) 75%,
+    /* centru clar */ rgba(0, 0, 0, 1) 100% /* dreapta blurată */
+  );
 }
 .reclama2 img {
   border-radius: 0 0 20px 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 768px) {
+  .reclama2 {
+    height: 50vh;
+    min-height: 300px;
+    background-attachment: scroll;
+  }
+
+  .reclama2::after {
+    backdrop-filter: blur(6px); /* mai subtil pe mobile */
+  }
+}
+
 .reclama2 a {
-  background-color: #d3c1c1;
+  background-color: transparent;
   text-decoration: none;
-  color: #520202c5;
+  color: white;
   font-weight: bold;
 
   position: absolute;
@@ -159,7 +213,7 @@ main {
 .reclama2 a:hover {
   background-color: #686a6b54;
   transform: scale(1.05);
-  color: white;
+  color: black;
   box-shadow: 0 0 10px rgba(162, 163, 165, 0.678);
 }
 .reclama2 h2 {
