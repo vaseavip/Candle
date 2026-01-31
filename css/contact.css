@@ -1,0 +1,117 @@
+.hero-section {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Safari / iOS */
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-section h2 {
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.contact-section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #fbc2eb;
+  display: block;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.form-control {
+  border-radius: 0.5rem;
+}
+
+.btn-custom {
+  background: #fbc2eb;
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.btn-custom:hover {
+  background: #a6c1ee;
+  color: #fff;
+}
+
+.contact-info {
+  margin-top: 40px;
+}
+
+.contact-info .card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 30px;
+}
+
+.contact-info .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}

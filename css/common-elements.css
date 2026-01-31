@@ -32,7 +32,7 @@ body {
   font-family: 'Cause', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background: linear-gradient(to right bottom, #3d342f, #8d68aa, #f4d6ff);
+  background: linear-gradient(to right bottom, #3d342f, #a68a64, #f8e3b4);
 }
 h1 {
   font-size: 2.5rem;
@@ -54,19 +54,21 @@ p {
   max-width: 65ch;
 }
 
-button {
+button,
+.button {
   font-family: 'Cause', sans-serif;
   font-size: clamp(0.75rem, 2.5vw, 1rem);
   padding: 0.4em 0.8em;
   border: 1px solid #646464;
   background-color: rgba(0, 0, 0, 0.4);
   color: black;
-  border-radius: 16px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   background-color: #686a6b54;
   transform: scale(1.05);
   color: white;
