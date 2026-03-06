@@ -1,108 +1,191 @@
-// Produsele
-const allProducts = [
-  { name: 'Candle "House"', price: 6, qty: 1 },
-  { name: 'Easter Candle', price: 5, qty: 2 },
-  { name: 'Scented Candle', price: 8, qty: 15 },
-  { name: 'Candle Lavanda Hous', price: 20, qty: 7 },
-  { name: 'Vase', price: 12, qty: 5 },
-  { name: 'Candle Vanilla style', price: 10, qty: 25 },
-  { name: 'Candle Rose style', price: 3, qty: 30 },
-  { name: 'Candle Bassic', price: 7, qty: 12 },
-  { name: 'Candle Holder', price: 9, qty: 8 },
-  { name: 'Candle Statue', price: 15, qty: 3 },
-];
+// ================================
+// CONSTANTE
+// ================================
 
-// TVA si moneda
 const VAT_RATE = 0.2;
-const CURRENCY = 'EUR';
-const USD_PER_EUR = 1.16;
+const CURRENCY = '€';
 
-// Cupoane valide
-const VALID_COUPONS = ['SAVE10', 'SAVE15', 'FREESHIP'];
+const VALID_COUPONS = {
+  SAVE10: 0.1,
+  SAVE15: 0.15,
+  FREESHIP: 0,
+};
 
-/*
-2. Functia normalizeCoupon
-*/
-function normalizeCoupon(coupon) {
-  return coupon.trim().toUpperCase();
-}
+let discount = 0;
 
-/*
-3. Functia isValidCoupon
-*/
-function isValidCoupon(code) {
-  for (const coupon of VALID_COUPONS) {
-    if (coupon === code) {
-      return true;
-    }
+// ================================
+// CART FUNCTIONALITY
+// ================================
+
+const cartItems = document.querySelectorAll(
+  '.card-body .d-flex.justify-content-between.align-items-center',
+);
+
+function updateTotals() {
+  let total = 0;
+
+  cartItems.forEach((item) => {
+    const priceText = item.querySelector('small').textContent;
+    const price = parseFloat(priceText);
+
+    const qty = parseInt(item.querySelector('span').textContent);
+
+    const itemTotal = price * qty;
+
+    item.querySelector('strong:last-child').textContent = itemTotal + ' €';
+
+    total += itemTotal;
+  });
+
+  if (discount > 0) {
+    total = total - total * discount;
   }
-  return false;
+
+  document.querySelector('.fs-5 strong:last-child').textContent =
+    total.toFixed(2) + ' €';
 }
 
-/*
-4. Functia validateAndNotify
-*/
-function validateAndNotify() {
-  // 1. Citim valoarea din input
-  const promoInput = document.querySelector('.input-group input').value;
+// ================================
+// QUANTITY BUTTONS
+// ================================
 
-  // 2. Normalizăm cuponul
-  const normalizedCoupon = normalizeCoupon(promoInput);
+document.querySelectorAll('.btn-outline-secondary').forEach((btn) => {
+  btn.addEventListener('click', function () {
+    const item = this.closest('.d-flex');
+    const qtyElement = item.querySelector('span');
 
-  // 3. Verificam daca cuponul este valid
-  if (isValidCoupon(normalizedCoupon)) {
-    if (normalizedCoupon === 'SAVE10') {
-      alert('Cuponul dvs. oferă 10% reducere.');
-    } else if (normalizedCoupon === 'SAVE15') {
-      alert('Cuponul dvs. oferă 15% reducere.');
-    } else if (normalizedCoupon === 'FREESHIP') {
-      alert('Cuponul dvs. oferă livrare gratuită.');
+    let qty = parseInt(qtyElement.textContent);
+
+    if (this.textContent === '+') {
+      qty++;
     }
-  } else {
-    alert('Cuponul introdus nu este valid.');
-  }
-}
 
-/*
-5. Event listener pe butonul Apply
-*/
-const promoForm = document.querySelector('.input-group').closest('form');
-promoForm.addEventListener('submit', function (event) {
-  event.preventDefault(); // prevenim refresh-ul paginii
-  validateAndNotify();
+    if (this.textContent === '-' && qty > 1) {
+      qty--;
+    }
+
+    qtyElement.textContent = qty;
+
+    updateTotals();
+  });
 });
 
-/*
-6. Calcul valoare totala stoc
-*/
-function calculateTotalStockValue(products) {
-  let totalValue = 0;
-  for (const product of products) {
-    totalValue += product.price * product.qty;
-  }
-  console.log(`Valoarea totală a stocului: ${totalValue} ${CURRENCY}`);
-}
-calculateTotalStockValue(allProducts);
+// ================================
+// COUPON SYSTEM
+// ================================
 
-/*
-7. Produse cu stoc redus (<10)
-*/
-const lowStock = allProducts.filter((product) => product.qty < 10);
-console.log('Produse cu stoc redus (<10):', lowStock);
+const promoForm = document.querySelector('.input-group').closest('form');
 
-/*
-8. Functia findProductByName
-*/
-function findProductByName(list, searchName) {
-  const lowerSearch = searchName.trim().toLowerCase();
-  for (const product of list) {
-    if (product.name.trim().toLowerCase() === lowerSearch) {
-      return product;
+promoForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const input = document.querySelector('.input-group input');
+  const code = input.value.trim().toUpperCase();
+
+  if (VALID_COUPONS[code] !== undefined) {
+    discount = VALID_COUPONS[code];
+
+    if (code === 'FREESHIP') {
+      alert('Free shipping applied!');
+    } else {
+      alert('Discount applied: ' + discount * 100 + '%');
     }
+
+    updateTotals();
+  } else {
+    alert('Invalid coupon');
   }
-  return null;
+});
+
+// ================================
+// COUNTRY → CITY DROPDOWN
+// ================================
+
+const cities = {
+  Romania: ['Bucharest', 'Cluj-Napoca', 'Timisoara', 'Iasi'],
+  Moldova: ['Chisinau', 'Balti', 'Cahul'],
+  Ukraine: ['Kyiv', 'Lviv', 'Odessa'],
+};
+
+const countrySelect = document.querySelectorAll('select')[0];
+const citySelect = document.querySelectorAll('select')[1];
+
+countrySelect.addEventListener('change', function () {
+  const selected = this.value;
+
+  citySelect.innerHTML = `<option selected disabled>City</option>`;
+
+  cities[selected].forEach((city) => {
+    const option = document.createElement('option');
+
+    option.value = city;
+    option.textContent = city;
+
+    citySelect.appendChild(option);
+  });
+});
+
+// ================================
+// FORM VALIDATION
+// ================================
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const inputs = form.querySelectorAll('input');
+
+  let valid = true;
+
+  inputs.forEach((input) => {
+    if (input.value.trim() === '') {
+      input.style.border = '2px solid red';
+      valid = false;
+    } else {
+      input.style.border = '';
+    }
+  });
+
+  const cardNumber = form.querySelector(
+    'input[placeholder="Card Number"]',
+  ).value;
+
+  if (cardNumber.length < 12) {
+    alert('Card number invalid');
+    return;
+  }
+
+  if (!valid) {
+    alert('Please fill all required fields');
+    return;
+  }
+
+  placeOrder();
+});
+
+// ================================
+// PLACE ORDER
+// ================================
+
+function placeOrder() {
+  const total = document.querySelector('.fs-5 strong:last-child').textContent;
+
+  const order = {
+    id: Date.now(),
+    total: total,
+    date: new Date().toLocaleDateString(),
+  };
+
+  localStorage.setItem('lastOrder', JSON.stringify(order));
+
+  alert('Order successful! Total: ' + total);
+
+  location.reload();
 }
 
-// Exemplu de test
-console.log(findProductByName(allProducts, 'vase')); // returnează obiectul Vase
-console.log(findProductByName(allProducts, 'unknown')); // returnează null
+// ================================
+// INITIAL CALCULATION
+// ================================
+
+updateTotals();
