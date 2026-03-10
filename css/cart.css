@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cart-items {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Safari / iOS */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 80px;
+  border-radius: 8px;
+}
+
+.product-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.product-info h3 {
+  font-size: 18px;
+}
+
+.price {
+  color: #666;
+  margin-top: 5px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.summary {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Safari / iOS */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.summary h2 {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkout {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkout:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+}

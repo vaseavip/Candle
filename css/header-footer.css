@@ -49,7 +49,10 @@ nav ul li a {
 
   border-radius: 6px;
   padding: 5px 10px;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.3s ease;
 }
 nav ul li a:hover {
   background-color: #686a6b54;
@@ -81,7 +84,10 @@ nav ul li a:hover {
   color: black;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.3s ease;
 }
 .search-form button:hover {
   background-color: #686a6b54;
@@ -92,6 +98,29 @@ nav ul li a:hover {
 hr {
   border: none;
   border-top: 1px solid #ccc;
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Safari / iOS */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
 }
 .foter {
   background: transparent;
@@ -136,7 +165,10 @@ footer p {
   color: black;
   border-radius: 6px;
   padding: 5px 10px;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.3s ease;
 }
 .footerlinks ul li a:hover {
   background-color: #686a6b54;
@@ -161,7 +193,10 @@ footer p {
   color: black;
   border-radius: 6px;
   padding: 5px 10px;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.3s ease;
 }
 .footerlinks1 ul li a:hover {
   background-color: #686a6b54;

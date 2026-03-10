@@ -1,5 +1,7 @@
-//Producte
-export const products = [
+// js/array.js
+// Lista completă de produse cu toate detaliile
+
+const products = [
   {
     id: 1,
     name: 'Candle Statue',
@@ -18,9 +20,7 @@ export const products = [
       achievement: 'Handmade, hand-casting',
     },
     stock: 50,
-    image: '/images/candle-statue.jpg',
   },
-
   {
     id: 2,
     name: 'Christmas Candle',
@@ -28,9 +28,7 @@ export const products = [
     categoryId: 4,
     description: 'Festive handmade candle perfect for Christmas decorations.',
     stock: 40,
-    image: '/images/christmas-candle.jpg',
   },
-
   {
     id: 3,
     name: 'Easter Candle',
@@ -38,9 +36,7 @@ export const products = [
     categoryId: 4,
     description: 'Decorative candle inspired by Easter themes.',
     stock: 40,
-    image: '/images/easter-candle.jpg',
   },
-
   {
     id: 4,
     name: 'Krispo Candle',
@@ -48,9 +44,7 @@ export const products = [
     categoryId: 3,
     description: 'Modern decorative candle with textured design.',
     stock: 35,
-    image: '/images/krispo-candle.jpg',
   },
-
   {
     id: 5,
     name: 'Candle Lavanda Hous',
@@ -58,9 +52,7 @@ export const products = [
     categoryId: 1,
     description: 'Relaxing lavender scented candle.',
     stock: 45,
-    image: '/images/lavender-candle.jpg',
   },
-
   {
     id: 6,
     name: 'Candle Vanilla Style',
@@ -68,9 +60,7 @@ export const products = [
     categoryId: 1,
     description: 'Classic vanilla scented candle.',
     stock: 45,
-    image: '/images/vanilla-candle.jpg',
   },
-
   {
     id: 7,
     name: 'Candle Rose Style',
@@ -78,9 +68,7 @@ export const products = [
     categoryId: 1,
     description: 'Romantic rose scented candle.',
     stock: 40,
-    image: '/images/rose-candle.jpg',
   },
-
   {
     id: 8,
     name: 'Candle Basic',
@@ -88,40 +76,19 @@ export const products = [
     categoryId: 2,
     description: 'Simple eco-friendly soy candle.',
     stock: 60,
-    image: '/images/basic-candle.jpg',
   },
 ];
 
-//Categorii
-export const categories = [
-  {
-    id: 1,
-    name: 'Scented Candles',
-    description: 'Relaxing & natural aromas',
-  },
-  {
-    id: 2,
-    name: 'Soy Candles',
-    description: 'Eco-friendly & clean burn',
-  },
-  {
-    id: 3,
-    name: 'Decor Candles',
-    description: 'Minimal & artistic designs',
-  },
+// Categorii (dacă vrei să folosești)
+const categories = [
+  { id: 1, name: 'Scented Candles', description: 'Relaxing & natural aromas' },
+  { id: 2, name: 'Soy Candles', description: 'Eco-friendly & clean burn' },
+  { id: 3, name: 'Decor Candles', description: 'Minimal & artistic designs' },
   {
     id: 4,
     name: 'Seasonal Candles',
     description: 'Limited edition collections',
   },
-  {
-    id: 5,
-    name: 'Gift Sets',
-    description: 'Perfect handmade gifts',
-  },
-  {
-    id: 6,
-    name: 'Custom Candles',
-    description: 'Personalized for you',
-  },
+  { id: 5, name: 'Gift Sets', description: 'Perfect handmade gifts' },
+  { id: 6, name: 'Custom Candles', description: 'Personalized for you' },
 ];
