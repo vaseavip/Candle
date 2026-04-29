@@ -44,7 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // actualizăm badge-ul la încărcarea paginii
   updateCartCount();
 });
-
+// funcția de verificare stoc
+function isInStock(product, requestedQty) {
+  if (!product || typeof requestedQty !== 'number' || requestedQty <= 0) {
+    console.warn(
+      'Date invalide la verificarea stocului:',
+      product,
+      requestedQty,
+    );
+    return false;
+  }
+  return product.quantity >= requestedQty;
+}
 // funcția de adăugare în coș
 function addToCart(productId) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -98,3 +109,7 @@ function updateCartCount() {
 }
 
 window.addToCart = addToCart;
+//test
+console.log('--- TEST isInStock ---');
+console.log(isInStock(products[0], 5), 'așteptat true');
+console.log(isInStock(products[4], 47), 'așteptat false');
