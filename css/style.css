@@ -109,7 +109,9 @@ main {
   text-align: center;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .product-card:hover {
   transform: translateY(-6px);
@@ -137,7 +139,10 @@ main {
   color: black;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.3s ease;
 
   padding: 10px 15px;
 
@@ -224,4 +229,31 @@ main {
   position: absolute;
   top: 10%;
   left: 70%;
+}
+
+/* ===== NOTIFICARE ADAUGARE IN COS ===== */
+
+.cart-message {
+  margin-top: 8px;
+  min-height: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  text-align: center;
+}
+
+/* mesaj succes */
+
+.cart-message.success {
+  color: #2e7d32;
+}
+
+/* mesaj eroare */
+
+.cart-message.error {
+  color: #c62828;
 }

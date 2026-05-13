@@ -1,15 +1,19 @@
-// js/cart.js
-
-// citim produsele din localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// render cart
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+  updateCartBadge();
+}
+
 function renderCart() {
   const container = document.getElementById('cartItems');
+  if (!container) return;
+
   container.innerHTML = '';
 
   if (cart.length === 0) {
-    container.innerHTML = '<p>Your cart is empty</p>';
+    container.innerHTML = `<p style="text-align:center;">Cart is empty</p>`;
     updateTotal();
     return;
   }
@@ -27,95 +31,75 @@ function renderCart() {
       </div>
 
       <div class="quantity">
-        <button onclick="changeQty(${product.id}, -1)">-</button>
+        <button class="qty-btn" data-id="${product.id}" data-action="minus">-</button>
         <span>${product.qty}</span>
-        <button onclick="changeQty(${product.id}, 1)">+</button>
+        <button class="qty-btn" data-id="${product.id}" data-action="plus">+</button>
       </div>
 
-      <button class="remove-btn" onclick="removeItem(${product.id})">Remove</button>
+      <button class="remove-btn" data-id="${product.id}">
+        Remove
+      </button>
     `;
 
     container.appendChild(item);
   });
 
+  attachEvents();
   updateTotal();
 }
 
-// schimbă cantitatea
-function changeQty(id, amount) {
-  cart.forEach((product) => {
-    if (product.id === id) {
-      product.qty += amount;
-      if (product.qty < 1) product.qty = 1;
-    }
+// EVENT HANDLERS (IMPORTANT FIX)
+function attachEvents() {
+  document.querySelectorAll('.qty-btn').forEach((btn) => {
+    btn.onclick = () => {
+      const id = Number(btn.dataset.id);
+      const action = btn.dataset.action;
+
+      changeQty(id, action === 'plus' ? 1 : -1);
+    };
   });
 
-  localStorage.setItem('cart', JSON.stringify(cart));
-  renderCart();
-  updateCartBadge();
+  document.querySelectorAll('.remove-btn').forEach((btn) => {
+    btn.onclick = () => {
+      removeItem(Number(btn.dataset.id));
+    };
+  });
 }
 
-// șterge produs
+function changeQty(id, amount) {
+  const item = cart.find((p) => p.id === id);
+  if (!item) return;
+
+  item.qty += amount;
+
+  if (item.qty < 1) item.qty = 1;
+
+  saveCart();
+}
+
 function removeItem(id) {
-  cart = cart.filter((product) => product.id !== id);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  renderCart();
-  updateCartBadge();
+  cart = cart.filter((p) => p.id !== id);
+  saveCart();
 }
 
-// total + subtotal
 function updateTotal() {
   let subtotal = 0;
-  cart.forEach((product) => (subtotal += product.price * product.qty));
-  let shipping = subtotal > 0 ? 10 : 0;
-  let total = subtotal + shipping;
+
+  cart.forEach((p) => {
+    subtotal += p.price * p.qty;
+  });
+
+  const shipping = subtotal > 0 ? 10 : 0;
 
   document.getElementById('subtotal').innerText = subtotal + ' €';
-  document.getElementById('total').innerText = total + ' €';
+  document.getElementById('total').innerText = subtotal + shipping + ' €';
 }
 
-// actualizare badge cart pe toate paginile
 function updateCartBadge() {
-  let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-  const cartCount = document.getElementById('cartCount');
-  if (cartCount) cartCount.innerText = totalQty;
+  const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+  const badge = document.getElementById('cartCount');
+  if (badge) badge.innerText = totalQty;
 }
 
 renderCart();
 updateCartBadge();
-
-// facem functiile globale pentru onclick
-window.changeQty = changeQty;
-window.removeItem = removeItem;
-
-function updateTotal() {
-  let subtotal = 0;
-
-  cart.forEach((product) => {
-    subtotal += product.price * product.qty;
-  });
-
-  let shipping = subtotal > 0 ? 10 : 0;
-  let total = subtotal + shipping;
-
-  document.getElementById('subtotal').innerText = subtotal + ' €';
-  document.getElementById('total').innerText = total + ' €';
-}
-
-// pornim renderul cartului
-renderCart();
-
-// funcția de verificare stoc
-function isInStock(product, requestedQty) {
-  if (!product || typeof requestedQty !== 'number' || requestedQty <= 0) {
-    console.warn('Date invalide la isInStock');
-    return false;
-  }
-  return product.quantity >= requestedQty;
-}
-
-//test removeItem
-console.log('--- TEST removeItem ---');
-console.log('Cart inițial:', JSON.stringify(cart, null, 2));
-removeItem(cart[0].id);
-console.log('Cart după removeItem:', JSON.stringify(cart, null, 2));

@@ -18,6 +18,7 @@
           <img src="./img/logo.png" alt="Logo" />
         </a>
       </div>
+
       <nav>
         <ul>
           <li><a href="./index.html"> Home </a></li>
@@ -27,30 +28,36 @@
           <li><a href="./contact.html"> Contact</a></li>
         </ul>
       </nav>
+
       <div class="search-form">
         <form action="/search" method="get">
           <input type="search" name="query" placeholder="Search..." />
           <button type="submit">Search</button>
         </form>
       </div>
+
       <div class="topicon">
         <a href="./product-page.html">
           <img src="./img/wishlist.png" alt="wishlist" />
         </a>
 
-        <a href="./checkout.html">
+        <!-- FIX: link corect către cart -->
+        <a href="./cart.html">
           <img src="./img/cart.png" alt="cart" />
         </a>
+
         <a href="login-page.html">
           <img src="./img/profile.png" alt="profile" />
         </a>
       </div>
+
       <div class="menu-icon">
         <a href="#">
           <img src="./img/menu.png" alt="Menu Icon" />
         </a>
       </div>
     </header>
+
     <main>
       <div class="cart-container">
         <div class="cart-items" id="cartItems"></div>
@@ -65,7 +72,8 @@
 
           <div class="summary-row">
             <span>Shipping</span>
-            <span id="shipping">10 €</span>
+            <!-- FIX: nu mai e hardcodat -->
+            <span id="shipping">Calculated</span>
           </div>
 
           <hr style="margin: 15px 0" />
@@ -83,6 +91,7 @@
     <footer>
       <div class="foter">
         <p>© 2025 Davas Studio</p>
+
         <div class="footerlinks">
           <h3>Information</h3>
           <ul>
@@ -91,6 +100,7 @@
             <li><a href="#">Data protection</a></li>
           </ul>
         </div>
+
         <div class="footerlinks1">
           <h3>Custumer support</h3>
           <ul>
@@ -99,6 +109,7 @@
             <li><a href="#">FAQ</a></li>
           </ul>
         </div>
+
         <div class="footercontact">
           <a href="https://www.facebook.com/davas">
             <img src="./img/facebook.png" alt="facebook" />
@@ -109,6 +120,7 @@
         </div>
       </div>
     </footer>
-    <script src="js/cart.js"></script>
+
+    <script src="./js/cart.js"></script>
   </body>
 </html>
