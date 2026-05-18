@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('products');
+  if (!container) return;
 
   function getCart() {
     return JSON.parse(localStorage.getItem('cart')) || [];
@@ -10,15 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateCartCount() {
-    let cart = getCart();
-    let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-
+    const cart = getCart();
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
     const cartCount = document.getElementById('cartCount');
-    if (cartCount) cartCount.innerText = totalQty;
+
+    if (cartCount) {
+      cartCount.innerText = totalQty;
+    }
   }
 
   function showMessage(btn, text) {
-    let msg = document.createElement('div');
+    const msg = document.createElement('div');
     msg.className = 'cart-msg';
     msg.innerText = text;
 
@@ -30,9 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function addToCart(product) {
-    let cart = getCart();
-
-    let existing = cart.find((item) => item.id === product.id);
+    const cart = getCart();
+    const existing = cart.find((item) => item.id === product.id);
 
     if (existing) {
       existing.qty += 1;
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: product.id,
         name: product.name,
         price: product.price,
+        currency: product.currency,
         image: product.image,
         qty: 1,
       });
@@ -54,58 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = '';
 
     products.forEach((product) => {
-      if (!product.quantity || product.quantity <= 0) return;
+      // Nu afișăm produsele indisponibile
+      if (!product.inStock) return;
 
       const card = document.createElement('div');
       card.className = 'product-card';
-
-      let imgPath = '';
-
-      switch (product.id) {
-        case 1:
-          imgPath = './img/lum1.png';
-          break;
-        case 2:
-          imgPath = './img/lum2.png';
-          break;
-        case 3:
-          imgPath = './img/lum3.png';
-          break;
-        case 4:
-          imgPath = './img/lum4.png';
-          break;
-        case 5:
-          imgPath = './img/lum0.png';
-          break;
-        case 6:
-          imgPath = './img/lum5.png';
-          break;
-        case 7:
-          imgPath = './img/lum6.png';
-          break;
-        case 8:
-          imgPath = './img/lum7.png';
-          break;
-      }
+      card.dataset.id = product.id;
 
       card.innerHTML = `
-        <img src="${imgPath}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.price} EURO</p>
-
-        <button class="add-btn">Add to Cart</button>
+        <img class="product-img" src="${product.image}" alt="${product.name}">
+        <h3 class="product-title">${product.name}</h3>
+        <p class="product-price">${product.currency}${product.price}</p>
+        <button class="add-btn add-to-cart" data-id="${product.id}">
+          Add to Cart
+        </button>
       `;
 
-      const btn = card.querySelector('.add-btn');
+      const btn = card.querySelector('.add-to-cart');
 
       btn.addEventListener('click', () => {
-        addToCart({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          image: imgPath,
-        });
-
+        addToCart(product);
         showMessage(btn, 'Product added to cart!');
       });
 
