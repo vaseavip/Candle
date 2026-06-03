@@ -32,6 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Actualizare badge coș
   updateCartCount();
+
+  // Butoane categorii
+  const scentedBtn = document.getElementById('scentedBtn');
+  const decorBtn = document.getElementById('decorBtn');
+  const seasonalBtn = document.getElementById('seasonalBtn');
+
+  if (scentedBtn) {
+    scentedBtn.addEventListener('click', () => {
+      window.location.href = 'shop.html?category=Scented Candles';
+    });
+  }
+
+  if (decorBtn) {
+    decorBtn.addEventListener('click', () => {
+      window.location.href = 'shop.html?category=Decor Candles';
+    });
+  }
+
+  if (seasonalBtn) {
+    seasonalBtn.addEventListener('click', () => {
+      window.location.href = 'shop.html?category=Seasonal Candles';
+    });
+  }
 });
 
 // Funcție pentru imagini produse
@@ -63,13 +86,10 @@ function addToCart(productId, button) {
 
   if (!product) return;
 
-  // verificăm dacă produsul există deja în coș
   const existing = cart.find((item) => item.id === productId);
 
-  // cantitatea dorită
   const requestedQty = existing ? existing.qty + 1 : 1;
 
-  // verificare stoc
   if (!isInStock(product, requestedQty)) {
     showMessage(button, 'Stoc insuficient!', 'error');
     return;
@@ -87,13 +107,10 @@ function addToCart(productId, button) {
     });
   }
 
-  // salvare în localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  // actualizare badge
   updateCartCount();
 
-  // notificare modernă
   showMessage(button, 'Produsul a fost adăugat în coș!', 'success');
 }
 
@@ -118,20 +135,16 @@ function showMessage(button, message, type) {
 
   messageBox.innerText = message;
 
-  // reset clase
   messageBox.className = 'cart-message';
 
-  // stil mesaj
   if (type === 'success') {
     messageBox.classList.add('success');
   } else {
     messageBox.classList.add('error');
   }
 
-  // afișare
   messageBox.style.opacity = '1';
 
-  // dispariție după 2 secunde
   setTimeout(() => {
     messageBox.style.opacity = '0';
   }, 2000);

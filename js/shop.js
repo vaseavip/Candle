@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('products');
+
   if (!container) return;
+
+  function getCategoryFromQueryString() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('category');
+  }
 
   function getCart() {
     return JSON.parse(localStorage.getItem('cart')) || [];
@@ -12,7 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCartCount() {
     const cart = getCart();
-    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+    const totalQty = cart.reduce((sum, item) => {
+      return sum + item.qty;
+    }, 0);
+
     const cartCount = document.getElementById('cartCount');
 
     if (cartCount) {
@@ -22,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showMessage(btn, text) {
     const msg = document.createElement('div');
+
     msg.className = 'cart-msg';
     msg.innerText = text;
 
@@ -34,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addToCart(product) {
     const cart = getCart();
+
     const existing = cart.find((item) => item.id === product.id);
 
     if (existing) {
@@ -56,11 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderProducts() {
     container.innerHTML = '';
 
-    products.forEach((product) => {
-      // Nu afișăm produsele indisponibile
+    const selectedCategory = getCategoryFromQueryString();
+
+    const filteredProducts = selectedCategory
+      ? products.filter(
+          (product) =>
+            product.category.toLowerCase() === selectedCategory.toLowerCase(),
+        )
+      : products;
+
+    if (filteredProducts.length === 0) {
+      container.innerHTML =
+        '<h2 class="text-center">No products found in this category.</h2>';
+      return;
+    }
+
+    filteredProducts.forEach((product) => {
+      // afișăm doar produsele disponibile
       if (!product.inStock) return;
 
       const card = document.createElement('div');
+
       card.className = 'product-card';
       card.dataset.id = product.id;
 
@@ -68,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <img class="product-img" src="${product.image}" alt="${product.name}">
         <h3 class="product-title">${product.name}</h3>
         <p class="product-price">${product.currency}${product.price}</p>
+
         <button class="add-btn add-to-cart" data-id="${product.id}">
           Add to Cart
         </button>
