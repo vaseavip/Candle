@@ -1,3 +1,44 @@
+function logout(reason = '') {
+  localStorage.removeItem('logged');
+  localStorage.removeItem('token');
+  localStorage.removeItem('tokenExpiresAt');
+
+  if (reason) {
+    localStorage.setItem('logoutReason', reason);
+  }
+
+  window.location.href = './login-page.html';
+}
+
+const logged = localStorage.getItem('logged');
+const token = localStorage.getItem('token');
+const tokenExpiresAt = localStorage.getItem('tokenExpiresAt');
+
+if (!logged || !token || !tokenExpiresAt) {
+  window.location.href = './login-page.html';
+}
+
+const now = Date.now();
+const expires = Number(tokenExpiresAt);
+
+if (now >= expires) {
+  logout('expired');
+}
+
+const timeRemaining = expires - now;
+
+if (timeRemaining > 0) {
+  setTimeout(() => {
+    logout('expired');
+  }, timeRemaining);
+}
+
+window.addEventListener('storage', () => {
+  if (!localStorage.getItem('logged')) {
+    window.location.href = './login-page.html';
+  }
+});
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function saveCart() {
