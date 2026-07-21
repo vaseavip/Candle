@@ -1,0 +1,17 @@
+.order-success {
+  max-width: 700px;
+
+  margin: 80px auto;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.order-success h1 {
+  margin-bottom: 20px;
+}
+
+.order-success p {
+  margin-bottom: 30px;
+}
