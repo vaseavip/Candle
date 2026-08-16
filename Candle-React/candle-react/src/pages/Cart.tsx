@@ -1,19 +1,17 @@
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import { useCart } from '../context/CartContext';
 import CartItem from '../components/Cart/CartItem';
 import '../styles/cart.css';
-import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 function Cart() {
   const { cart, increaseQuantity, decreaseQuantity, removeFromCart } =
     useCart();
 
-  useEffect(() => {
-    console.log('Cart updated:', cart);
-  }, [cart]);
-
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   if (cart.length === 0) {
     return (
@@ -21,6 +19,10 @@ function Cart() {
         <h1>Shopping Cart</h1>
 
         <p>Your cart is empty.</p>
+
+        <Link to="/shop" className="button">
+          Continue Shopping
+        </Link>
       </main>
     );
   }

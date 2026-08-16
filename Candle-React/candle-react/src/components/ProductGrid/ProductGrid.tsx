@@ -1,13 +1,12 @@
 import ProductCard from '../ProductCard/ProductCard';
-import { products } from '../../data/products';
 import type { Product } from '../../types/Product';
 
 interface ProductGridProps {
-  items?: Product[];
+  items: Product[];
   title?: string;
 }
 
-function ProductGrid({ items = products, title }: ProductGridProps) {
+function ProductGrid({ items, title }: ProductGridProps) {
   return (
     <section>
       {title && (

@@ -1,11 +1,15 @@
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import '../styles/checkout.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { postCart } from '../api/apiClient';
 
 function Checkout() {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,18 +21,19 @@ function Checkout() {
     zip: '',
   });
 
-  const { cart: cartItems, clearCart } = useCart();
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
-  );
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   }
-  function handleOrder() {
+
+  async function handleOrder() {
     if (
       !formData.firstName ||
       !formData.lastName ||
@@ -43,9 +48,58 @@ function Checkout() {
       return;
     }
 
-    clearCart();
+    setSubmitError(null);
+    setSubmitting(true);
 
-    navigate('/order-success');
+    try {
+      await postCart({
+        items: cart.map(({ id, name, price, quantity }) => ({
+          id,
+          name,
+          price,
+          quantity,
+        })),
+        total,
+        shipping: formData,
+      });
+
+      clearCart();
+      navigate('/order-success');
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : 'Something went wrong.',
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <main className="checkout-page">
+        <h1>Checkout</h1>
+
+        <p>You must be logged in to complete your order.</p>
+
+        <Link to="/login" className="button">
+          Login
+        </Link>
+      </main>
+    );
+  }
+
+  if (cart.length === 0) {
+    return (
+      <main className="checkout-page">
+        <h1>Checkout</h1>
+
+        <p>Your cart is empty.</p>
+
+        <Link to="/shop" className="button">
+          Continue Shopping
+        </Link>
+      </main>
+    );
   }
 
   return (
@@ -162,8 +216,10 @@ function Checkout() {
 
           <h3>Total: {total.toFixed(2)} €</h3>
 
-          <button className="button" onClick={handleOrder}>
-            Place Order
+          {submitError && <p className="form-error">{submitError}</p>}
+
+          <button className="button" onClick={handleOrder} disabled={submitting}>
+            {submitting ? 'Processing...' : 'Pay'}
           </button>
         </aside>
       </div>

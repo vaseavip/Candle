@@ -3,14 +3,18 @@ import { Link, NavLink } from 'react-router-dom';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 
 import logo from '../../assets/images/logo.png';
-import wishlist from '../../assets/images/wishlist.png';
+import wishlistIcon from '../../assets/images/wishlist.png';
 import cartIcon from '../../assets/images/cart.png';
 import profile from '../../assets/images/profile.png';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import { useWishlist } from '../../context/WishlistContext';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cart } = useCart();
+  const { isAuthenticated, user, logout } = useAuth();
+  const { wishlist } = useWishlist();
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -49,8 +53,11 @@ function Header() {
       </div>
 
       <div className="topicon">
-        <Link to="/wishlist">
-          <img src={wishlist} alt="wishlist" />
+        <Link to="/wishlist" className="wishlist-link">
+          <img src={wishlistIcon} alt="wishlist" />
+          {wishlist.length > 0 && (
+            <span className="cart-count">{wishlist.length}</span>
+          )}
         </Link>
 
         <Link to="/cart" className="cart-link">
@@ -58,9 +65,20 @@ function Header() {
           <span className="cart-count">{cartCount}</span>
         </Link>
 
-        <Link to="/login">
-          <img src={profile} alt="profile" />
-        </Link>
+        {isAuthenticated ? (
+          <button
+            type="button"
+            className="icon-button"
+            onClick={logout}
+            title={`Logout (${user?.email})`}
+          >
+            <img src={profile} alt="profile" />
+          </button>
+        ) : (
+          <Link to="/login">
+            <img src={profile} alt="profile" />
+          </Link>
+        )}
       </div>
 
       {/* Hamburger */}

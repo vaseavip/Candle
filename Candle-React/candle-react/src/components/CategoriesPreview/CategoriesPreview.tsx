@@ -1,10 +1,30 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import cub from '../../assets/images/cub.png';
-import decor from '../../assets/images/decor.png';
-import scoica from '../../assets/images/scoica.png';
+import { getCategories } from '../../api/apiClient';
+import type { Category } from '../../types/Category';
 
 function CategoriesPreview() {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        const data = await getCategories();
+        setCategories(data);
+        setError(null);
+      } catch {
+        setError('Something went wrong.');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadCategories();
+  }, []);
+
   return (
     <>
       <div className="text">
@@ -12,55 +32,37 @@ function CategoriesPreview() {
       </div>
 
       <section className="container my-5">
-        <div className="row g-4">
-          <div className="col-sm-6 col-lg-4">
-            <div className="card category-card shadow-sm">
-              <img src={cub} alt="Scented Candles" />
+        {loading && <p>Loading categories...</p>}
 
-              <div className="card-body text-center">
-                <h5>Scented Candles</h5>
+        {error && <p>{error}</p>}
 
-                <p className="text-muted">Relaxing & natural aromas</p>
+        {!loading && !error && (
+          <div className="row g-4">
+            {categories.map((category) => (
+              <div key={category.id} className="col-sm-6 col-lg-4">
+                <div className="card category-card shadow-sm">
+                  <img
+                    src={`http://localhost:5001${category.image}`}
+                    alt={category.name}
+                  />
 
-                <Link to="/shop" className="btn btn-sm mt-2 button">
-                  View products
-                </Link>
+                  <div className="card-body text-center">
+                    <h5>{category.name}</h5>
+
+                    <p className="text-muted">{category.description}</p>
+
+                    <Link
+                      to={`/shop?category=${category.id}`}
+                      className="btn btn-sm mt-2 button"
+                    >
+                      View products
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-
-          <div className="col-sm-6 col-lg-4">
-            <div className="card category-card shadow-sm">
-              <img src={decor} alt="Decor Candles" />
-
-              <div className="card-body text-center">
-                <h5>Decor Candles</h5>
-
-                <p className="text-muted">Minimal & artistic designs</p>
-
-                <Link to="/shop" className="btn btn-sm mt-2 button">
-                  View products
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-lg-4">
-            <div className="card category-card shadow-sm">
-              <img src={scoica} alt="Seasonal Candles" />
-
-              <div className="card-body text-center">
-                <h5>Seasonal Candles</h5>
-
-                <p className="text-muted">Limited edition collections</p>
-
-                <Link to="/shop" className="btn btn-sm mt-2 button">
-                  View products
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        )}
       </section>
     </>
   );

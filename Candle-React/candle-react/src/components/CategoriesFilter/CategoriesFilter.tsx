@@ -1,4 +1,7 @@
-import { categories } from '../../data/categories';
+import { useEffect, useState } from 'react';
+
+import { getCategories } from '../../api/apiClient';
+import type { Category } from '../../types/Category';
 
 interface CategoriesFilterProps {
   selectedCategory: number;
@@ -9,6 +12,21 @@ function CategoriesFilter({
   selectedCategory,
   onSelectCategory,
 }: CategoriesFilterProps) {
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        const data = await getCategories();
+        setCategories(data);
+      } catch {
+        setCategories([]);
+      }
+    }
+
+    loadCategories();
+  }, []);
+
   return (
     <div className="categories-filter">
       <button

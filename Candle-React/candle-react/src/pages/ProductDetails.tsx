@@ -1,35 +1,78 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { products } from '../data/products';
+import { HiHeart, HiOutlineHeart } from 'react-icons/hi2';
+import '../styles/productdetails.css';
+import { getProduct } from '../api/apiClient';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
+import StarRating from '../components/StarRating/StarRating';
+import type { Product } from '../types/Product';
 
 function ProductDetails() {
   const { id } = useParams();
   const { addToCart } = useCart();
-  const product = products.find((product) => product.id === Number(id));
+  const { isInWishlist, toggleWishlist } = useWishlist();
+
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadProduct() {
+      try {
+        const data = await getProduct(Number(id));
+        setProduct(data);
+        setError(null);
+      } catch {
+        setError('Something went wrong.');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProduct();
+  }, [id]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   if (!product) {
-    return <h2>Product not found.</h2>;
+    return <p>Product not found.</p>;
   }
+
+  const inWishlist = isInWishlist(product.id);
 
   return (
     <main className="product-details">
-      <div className="product-image">
-        <img src={product.image} alt={product.name} />
+      <div className="product-details-image-card">
+        <img src={`http://localhost:5001${product.image}`} alt={product.name} />
       </div>
 
-      <div className="product-content">
+      <div className="product-details-card">
         <h1>{product.name}</h1>
 
-        <h2>
+        {product.rating !== undefined && (
+          <StarRating
+            rating={product.rating}
+            reviewsCount={product.reviewsCount}
+          />
+        )}
+
+        <h2 className="product-details-price">
           {product.price}
           {product.currency}
         </h2>
 
-        <p>
+        <p className="product-details-category">
           <strong>Category:</strong> {product.category}
         </p>
 
-        <p>{product.description}</p>
+        <p className="product-details-description">{product.description}</p>
 
         {product.characteristics && (
           <div className="product-characteristics">
@@ -69,9 +112,20 @@ function ProductDetails() {
           </div>
         )}
 
-        <button className="button" onClick={() => addToCart(product)}>
-          Add to Cart
-        </button>
+        <div className="product-details-actions">
+          <button className="button" onClick={() => addToCart(product)}>
+            Add to Cart
+          </button>
+
+          <button
+            type="button"
+            className={`wishlist-btn ${inWishlist ? 'active' : ''}`}
+            onClick={() => toggleWishlist(product)}
+          >
+            {inWishlist ? <HiHeart /> : <HiOutlineHeart />}
+            {inWishlist ? 'In Wishlist' : 'Add to Wishlist'}
+          </button>
+        </div>
       </div>
     </main>
   );

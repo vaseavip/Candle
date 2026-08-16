@@ -1,0 +1,475 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Scented Candles",
+      "description": "Relaxing & natural aromas",
+      "image": "/assets/images/cub.png"
+    },
+    {
+      "id": 2,
+      "name": "Soy Candles",
+      "description": "Eco-friendly & clean burn",
+      "image": "/assets/images/eco.png"
+    },
+    {
+      "id": 3,
+      "name": "Decor Candles",
+      "description": "Minimal & artistic designs",
+      "image": "/assets/images/decor.png"
+    },
+    {
+      "id": 4,
+      "name": "Seasonal Candles",
+      "description": "Limited edition collections",
+      "image": "/assets/images/scoica.png"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Rose Bloom Candle",
+      "price": 24,
+      "currency": "€",
+      "category": "Scented Candles",
+      "image": "/assets/images/lum7.png",
+      "inStock": true,
+      "categoryId": 1,
+      "description": "A hand-poured soy candle sculpted into a single blooming rose, finished with a soft rose and peony fragrance. Each petal is shaped by hand, so no two candles are exactly alike. Burns for approximately 18 hours and makes a stunning centerpiece even before it's lit.",
+      "quantity": 40,
+      "rating": 4.8,
+      "reviewsCount": 142,
+      "characteristics": {
+        "material": "Soy wax blend",
+        "fuseType": "Cotton wick",
+        "weight": "180g",
+        "height": "9 cm",
+        "burningTime": "18 hours",
+        "color": "Dusty rose"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Macaron Tower Candle Set",
+      "price": 32,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/lum0.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "Six pastel, macaron-shaped candles stacked into a playful centerpiece. Made from a soft vanilla-scented wax blend, they're just as lovely displayed on a dessert table as they are lit for a cozy evening. Sold as a set of six mixed colors.",
+      "quantity": 25,
+      "rating": 4.6,
+      "reviewsCount": 98,
+      "characteristics": {
+        "material": "Paraffin-soy blend",
+        "fuseType": "Cotton wick",
+        "weight": "420g (set of 6)",
+        "height": "4 cm each",
+        "burningTime": "6 hours each",
+        "color": "Mixed pastel",
+        "flavor": ["Vanilla", "Almond"]
+      }
+    },
+    {
+      "id": 3,
+      "name": "Apollo Bust Candle",
+      "price": 38,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/lum1.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "Inspired by classical Greco-Roman sculpture, this bust-shaped pillar candle brings a museum-worthy accent to any shelf or mantel. Carved in warm ivory wax with a lightly textured finish, it burns slowly from the crown down, revealing the sculpture beneath the flame.",
+      "quantity": 20,
+      "rating": 4.9,
+      "reviewsCount": 211,
+      "characteristics": {
+        "material": "Paraffin wax",
+        "fuseType": "Cotton wick",
+        "weight": "650g",
+        "height": "17 cm",
+        "burningTime": "40 hours",
+        "color": "Ivory"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Antique Bronze Bust Candle",
+      "price": 40,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/lum2.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "A moodier take on our classical bust candle, finished with warm bronze undertones and deeper shadow detailing in the hair and features. A striking statement piece for a reading nook or fireplace mantel.",
+      "quantity": 18,
+      "rating": 4.7,
+      "reviewsCount": 76,
+      "characteristics": {
+        "material": "Paraffin wax",
+        "fuseType": "Cotton wick",
+        "weight": "650g",
+        "height": "17 cm",
+        "burningTime": "40 hours",
+        "color": "Antique bronze"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Guardian Angel Candle",
+      "price": 29,
+      "currency": "€",
+      "category": "Seasonal Candles",
+      "image": "/assets/images/lum5.png",
+      "inStock": true,
+      "categoryId": 4,
+      "description": "A serene angel bust with delicately carved wings, hand-poured in soft ivory wax. A favorite for the winter holidays, it makes a thoughtful gift for anyone who could use a little extra light this season.",
+      "quantity": 30,
+      "rating": 4.8,
+      "reviewsCount": 133,
+      "characteristics": {
+        "material": "Soy wax blend",
+        "fuseType": "Cotton wick",
+        "weight": "300g",
+        "height": "12 cm",
+        "burningTime": "22 hours",
+        "color": "Ivory"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Teddy Bear Candle",
+      "price": 19,
+      "currency": "€",
+      "category": "Soy Candles",
+      "image": "/assets/images/lum6.png",
+      "inStock": true,
+      "categoryId": 2,
+      "description": "A playful soy wax teddy bear candle in a deep lavender hue, scented with calming lavender and chamomile. Loved as a nursery decoration or a gentle gift for candle lovers of any age.",
+      "quantity": 45,
+      "rating": 4.9,
+      "reviewsCount": 187,
+      "characteristics": {
+        "material": "Soy wax",
+        "fuseType": "Cotton wick",
+        "weight": "220g",
+        "height": "10 cm",
+        "burningTime": "16 hours",
+        "color": "Lavender",
+        "flavor": ["Lavender", "Chamomile"]
+      }
+    },
+    {
+      "id": 7,
+      "name": "Winter Wonderland Candle Collection",
+      "price": 56,
+      "currency": "€",
+      "category": "Seasonal Candles",
+      "image": "/assets/images/rec2.jpg",
+      "inStock": true,
+      "categoryId": 4,
+      "description": "A curated collection of miniature holiday-shaped candles — little houses, pine trees, a pinecone, and a reindeer — cast in a warm beeswax blend. Arranged together they make an instant festive tablescape; lit one by one, each burns for 6 to 10 hours.",
+      "quantity": 15,
+      "rating": 4.7,
+      "reviewsCount": 64,
+      "characteristics": {
+        "material": "Beeswax blend",
+        "fuseType": "Cotton wick",
+        "weight": "900g (full set)",
+        "height": "4-16 cm (mixed)",
+        "burningTime": "6-10 hours each",
+        "color": "Warm ivory"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Coastal Pillar Candle Set",
+      "price": 48,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/rec3.jpg",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "A textured set of geometric and shell-inspired pillar candles in soft neutral tones, designed to be grouped together for a gallery-shelf look. Unscented, so the natural soy-beeswax blend never competes with your home fragrance.",
+      "quantity": 16,
+      "rating": 4.6,
+      "reviewsCount": 52,
+      "characteristics": {
+        "material": "Soy-beeswax blend",
+        "fuseType": "Cotton wick",
+        "weight": "1.1kg (full set)",
+        "height": "5-14 cm (mixed)",
+        "burningTime": "10-30 hours each",
+        "color": "Neutral tones"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Wrapped Gift Candle Trio",
+      "price": 34,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/gift2.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "Three petite candles wrapped in kraft paper and tied with raffia, ready to gift without a single extra step. Each one is a different botanical blend, so the recipient gets a mini discovery set of our best-loved scents.",
+      "quantity": 28,
+      "rating": 4.8,
+      "reviewsCount": 91,
+      "characteristics": {
+        "material": "Soy wax blend",
+        "fuseType": "Cotton wick",
+        "weight": "360g (set of 3)",
+        "height": "6 cm each",
+        "burningTime": "12 hours each",
+        "color": "Natural",
+        "flavor": ["Sandalwood", "Wild fig", "Amber"]
+      }
+    },
+    {
+      "id": 10,
+      "name": "Fluted Pillar Candle Collection",
+      "price": 44,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/mod1.jpg",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "Deeply ribbed pillar candles in warm oak and soft ivory, cast in a variety of heights to build an editorial-style candle display. Unscented and slow-burning, made to be restyled again and again.",
+      "quantity": 14,
+      "rating": 4.5,
+      "reviewsCount": 47,
+      "characteristics": {
+        "material": "Paraffin wax",
+        "fuseType": "Cotton wick",
+        "weight": "1.3kg (full set)",
+        "height": "6-20 cm (mixed)",
+        "burningTime": "15-45 hours each",
+        "color": "Oak & ivory"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Stone Jar Soy Candle",
+      "price": 26,
+      "currency": "€",
+      "category": "Soy Candles",
+      "image": "/assets/images/mod3.jpg",
+      "inStock": true,
+      "categoryId": 2,
+      "description": "Our best-selling everyday candle: 100% soy wax poured into a matte reusable stoneware jar with a fitted lid. Clean-burning and gently scented with cedar and sea salt, it's designed to dust off and refill once the wax runs low.",
+      "quantity": 60,
+      "rating": 4.9,
+      "reviewsCount": 268,
+      "characteristics": {
+        "material": "100% soy wax",
+        "fuseType": "Cotton wick",
+        "weight": "240g",
+        "height": "8 cm",
+        "burningTime": "35 hours",
+        "color": "Stone grey",
+        "flavor": ["Cedar", "Sea salt"]
+      }
+    },
+    {
+      "id": 12,
+      "name": "Cube Duo Candle Set",
+      "price": 30,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/cub.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "Two minimalist cube candles — one warm ivory, one soft charcoal — cast from a dense pillar wax that keeps their crisp edges as they burn. A quietly modern addition to any console table or bookshelf.",
+      "quantity": 32,
+      "rating": 4.6,
+      "reviewsCount": 58,
+      "characteristics": {
+        "material": "Paraffin wax",
+        "fuseType": "Cotton wick",
+        "weight": "500g (set of 2)",
+        "height": "9 cm each",
+        "burningTime": "28 hours each",
+        "color": "Ivory & charcoal"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Sculptural Pebble Stack Candle",
+      "price": 42,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/decor.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "An architectural candle arrangement inspired by stacked river stones, paired with a tall fluted pillar. Each piece burns independently, so you can rearrange the set as the candles wear down.",
+      "quantity": 12,
+      "rating": 4.7,
+      "reviewsCount": 39,
+      "characteristics": {
+        "material": "Paraffin-soy blend",
+        "fuseType": "Cotton wick",
+        "weight": "1.4kg (full set)",
+        "height": "5-19 cm (mixed)",
+        "burningTime": "10-40 hours each",
+        "color": "Natural stone tones"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Ribbed Wood-Base Candle Set",
+      "price": 46,
+      "currency": "€",
+      "category": "Soy Candles",
+      "image": "/assets/images/eco.png",
+      "inStock": true,
+      "categoryId": 2,
+      "description": "A collection of ribbed soy candles paired with a hand-thrown ceramic bud vase, finished on natural wood risers. A calm, earthy display for anyone who loves the wabi-sabi look.",
+      "quantity": 17,
+      "rating": 4.6,
+      "reviewsCount": 44,
+      "characteristics": {
+        "material": "100% soy wax",
+        "fuseType": "Cotton wick",
+        "weight": "1.1kg (full set)",
+        "height": "6-16 cm (mixed)",
+        "burningTime": "12-35 hours each",
+        "color": "Natural"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Pastel Seashell Candle Set",
+      "price": 27,
+      "currency": "€",
+      "category": "Seasonal Candles",
+      "image": "/assets/images/scoica.png",
+      "inStock": true,
+      "categoryId": 4,
+      "description": "Four shimmering, shell-shaped candles in peach, blush, seafoam, and sky blue, finished with a fine glitter dust for extra shine. A sweet nod to summer that looks just as good year-round.",
+      "quantity": 38,
+      "rating": 4.8,
+      "reviewsCount": 115,
+      "characteristics": {
+        "material": "Soy wax blend",
+        "fuseType": "Cotton wick",
+        "weight": "320g (set of 4)",
+        "height": "5 cm each",
+        "burningTime": "8 hours each",
+        "color": "Mixed pastel"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Rose Bloom Candle - Mini",
+      "price": 14,
+      "currency": "€",
+      "category": "Scented Candles",
+      "image": "/assets/images/lum7.png",
+      "inStock": true,
+      "categoryId": 1,
+      "description": "The mini version of our signature rose candle, sized for gifting or for filling a smaller space with fragrance. Same hand-shaped petals, same rose and peony scent, in a more compact 6cm bloom.",
+      "quantity": 50,
+      "rating": 4.7,
+      "reviewsCount": 53,
+      "characteristics": {
+        "material": "Soy wax blend",
+        "fuseType": "Cotton wick",
+        "weight": "90g",
+        "height": "6 cm",
+        "burningTime": "9 hours",
+        "color": "Dusty rose"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Apollo Bust Candle - Large Edition",
+      "price": 62,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/lum1.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "A larger-scale version of our Apollo bust candle, nearly double the height of the original, for anyone who wants their classical centerpiece to make an even bigger statement.",
+      "quantity": 8,
+      "rating": 4.9,
+      "reviewsCount": 34,
+      "characteristics": {
+        "material": "Paraffin wax",
+        "fuseType": "Cotton wick",
+        "weight": "1.2kg",
+        "height": "30 cm",
+        "burningTime": "70 hours",
+        "color": "Ivory"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Cube Duo Candle Set - Travel Size",
+      "price": 18,
+      "currency": "€",
+      "category": "Decor Candles",
+      "image": "/assets/images/cub.png",
+      "inStock": true,
+      "categoryId": 3,
+      "description": "A compact, travel-friendly version of our cube duo, perfectly sized for a nightstand, office desk, or carry-on. Same two-tone pairing, scaled down without losing the sharp geometric silhouette.",
+      "quantity": 40,
+      "rating": 4.5,
+      "reviewsCount": 21,
+      "characteristics": {
+        "material": "Paraffin wax",
+        "fuseType": "Cotton wick",
+        "weight": "220g (set of 2)",
+        "height": "5 cm each",
+        "burningTime": "12 hours each",
+        "color": "Ivory & charcoal"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Stone Jar Soy Candle - Refill",
+      "price": 19,
+      "currency": "€",
+      "category": "Soy Candles",
+      "image": "/assets/images/mod3.jpg",
+      "inStock": true,
+      "categoryId": 2,
+      "description": "A wax-only refill for our Stone Jar Soy Candle, made to be poured into your existing jar once the first candle burns down. The sustainable way to keep the same reusable jar in rotation for years.",
+      "quantity": 55,
+      "rating": 4.8,
+      "reviewsCount": 67,
+      "characteristics": {
+        "material": "100% soy wax",
+        "fuseType": "Cotton wick",
+        "weight": "240g",
+        "height": "8 cm",
+        "burningTime": "35 hours",
+        "color": "Natural",
+        "flavor": ["Cedar", "Sea salt"]
+      }
+    },
+    {
+      "id": 20,
+      "name": "Pastel Seashell Candle - Mini Set",
+      "price": 16,
+      "currency": "€",
+      "category": "Seasonal Candles",
+      "image": "/assets/images/scoica.png",
+      "inStock": true,
+      "categoryId": 4,
+      "description": "A petite version of our shell candle set, sized for a bathroom shelf, gift bag, or as a little something extra with a larger order. Includes two mixed pastel shells.",
+      "quantity": 42,
+      "rating": 4.6,
+      "reviewsCount": 29,
+      "characteristics": {
+        "material": "Soy wax blend",
+        "fuseType": "Cotton wick",
+        "weight": "160g (set of 2)",
+        "height": "4 cm each",
+        "burningTime": "6 hours each",
+        "color": "Mixed pastel"
+      }
+    }
+  ]
+}

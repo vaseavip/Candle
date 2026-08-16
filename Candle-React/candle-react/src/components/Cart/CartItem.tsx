@@ -15,7 +15,11 @@ function CartItem({
 }: CartItemProps) {
   return (
     <div className="cart-item">
-      <img src={product.image} alt={product.name} className="cart-item-image" />
+      <img
+        src={`http://localhost:5001${product.image}`}
+        alt={product.name}
+        className="cart-item-image"
+      />
 
       <div className="product-info">
         <h2>{product.name}</h2>

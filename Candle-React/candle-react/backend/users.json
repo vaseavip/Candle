@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1784133216924,
+    "name": "Ion",
+    "surname": "Botnari",
+    "email": "ion@demo.com",
+    "passwordHash": "$2b$10$W5Ccbvn/HA4q.L3Clbr4hukrNHy6WWemMMFT3ZeO98YOB4zIvEL66",
+    "photo": "1784133216838-930693051.png",
+    "createdAt": "2026-07-15T16:33:36.924Z"
+  },
+  {
+    "id": 1784655158170,
+    "name": "Andrei",
+    "surname": "Munteanu",
+    "email": "asda@gmail.com",
+    "passwordHash": "$2b$10$I1HX271mcWwv4EbsL85C6.qiwsvDLzj/Im50va/Wdis.mGGj6BgF6",
+    "photo": "1784655158045-327565919.jpg",
+    "createdAt": "2026-07-21T17:32:38.170Z"
+  },
+  {
+    "id": 1784733613906,
+    "name": "Mihai",
+    "surname": "Anton",
+    "email": "asd@gmail.com",
+    "passwordHash": "$2b$10$r6tgv5j2SsfI0I2q1BGTlek3hlqtfM0GrP.K6iucTizEnr4jntDGi",
+    "photo": "1784733613768-516705755.jpg",
+    "createdAt": "2026-07-22T15:20:13.906Z"
+  },
+  {
+    "id": 1786709234270,
+    "name": "perjuvasile0",
+    "surname": "",
+    "email": "perjuvasile0@gmail.com",
+    "birthDate": "1999-08-01",
+    "passwordHash": "$2b$10$qoBs6m/HMkPB6Ant94PzBeLFinRTPmvi6S2kfxMiz15maKtl6Ak/.",
+    "photo": "",
+    "createdAt": "2026-08-14T12:07:14.270Z"
+  }
+]

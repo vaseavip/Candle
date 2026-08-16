@@ -11,6 +11,8 @@ export interface Product {
   quantity: number;
 
   sizes?: string[];
+  rating?: number;
+  reviewsCount?: number;
 
   characteristics?: {
     material?: string;
