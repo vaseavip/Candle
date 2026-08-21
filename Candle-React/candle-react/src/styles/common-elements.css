@@ -61,6 +61,14 @@ body {
     #e6c49a 100%
   );
 }
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--color-ink);
+}
+
 h1 {
   font-size: 2.5rem;
   line-height: 1.2;
@@ -79,13 +87,20 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   max-width: 65ch;
+  color: var(--color-ink-soft);
+}
+
+a {
+  color: var(--color-terracotta);
 }
 
 button,
 .button {
   font-family: 'Cause', sans-serif;
   font-size: clamp(0.75rem, 2.5vw, 1rem);
-  padding: 0.5em 1em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.6em 1.2em;
   text-decoration: none;
   display: inline-block;
   text-align: center;
@@ -98,6 +113,7 @@ button,
   color: white;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(180, 85, 47, 0.25);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -107,9 +123,14 @@ button,
 button:hover,
 .button:hover {
   filter: brightness(1.08);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.03);
   color: white;
-  box-shadow: 0 6px 16px rgba(180, 85, 47, 0.4);
+  box-shadow: 0 8px 20px rgba(180, 85, 47, 0.4);
+}
+
+button:active,
+.button:active {
+  transform: translateY(0) scale(0.98);
 }
 
 button:disabled,
@@ -117,12 +138,15 @@ button:disabled,
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 .details-btn {
   text-decoration: none;
   font-family: 'Cause', sans-serif;
   font-size: clamp(0.75rem, 2.5vw, 1rem);
-  padding: 0.5em 1em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.6em 1.2em;
   border: 1.5px solid var(--color-amber-dark);
   background: transparent;
   color: var(--color-amber-dark);
@@ -138,9 +162,9 @@ button:disabled,
 
 .details-btn:hover {
   background-color: var(--color-amber-dark);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.03);
   color: white;
-  box-shadow: 0 6px 16px rgba(180, 85, 47, 0.35);
+  box-shadow: 0 8px 20px rgba(180, 85, 47, 0.35);
 }
 
 @keyframes fadeInUp {

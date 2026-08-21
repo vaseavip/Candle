@@ -11,9 +11,11 @@ function Promo() {
         <span style={{ left: '82%', animationDuration: '10s', animationDelay: '3.2s' }} />
       </div>
 
-      <div className="banner-media">
-        <h2>Enjoy 20% Off This Season's Styles</h2>
-        <Link to="/shop">Show All</Link>
+      <div className="container">
+        <div className="banner-media">
+          <h2>Enjoy 20% Off This Season's Styles</h2>
+          <Link to="/shop">Show All</Link>
+        </div>
       </div>
     </section>
   );

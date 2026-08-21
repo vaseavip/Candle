@@ -12,10 +12,12 @@ function Hero() {
         <span style={{ left: '90%', animationDuration: '7.5s', animationDelay: '3s' }} />
       </div>
 
-      <div className="banner-media">
-        <Link to="/shop" id="link1">
-          NEW COLLECTION
-        </Link>
+      <div className="container">
+        <div className="banner-media">
+          <Link to="/shop" id="link1">
+            NEW COLLECTION
+          </Link>
+        </div>
       </div>
     </section>
   );
