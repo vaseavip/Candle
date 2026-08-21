@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiHeart, HiOutlineHeart } from 'react-icons/hi2';
 import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
+import { BASE_URL } from '../../api/apiClient';
 interface ProductCardProps {
   product: Product;
 }
@@ -17,7 +18,7 @@ function ProductCard({ product }: ProductCardProps) {
     <div className="product-card">
       <div className="product-card-image-wrap">
         <img
-          src={`http://localhost:5001${product.image}`}
+          src={`${BASE_URL}${product.image}`}
           alt={product.name}
           className="product-card-image"
         />

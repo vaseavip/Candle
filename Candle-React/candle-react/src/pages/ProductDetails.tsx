@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { HiHeart, HiOutlineHeart } from 'react-icons/hi2';
 import '../styles/productdetails.css';
-import { getProduct } from '../api/apiClient';
+import { getProduct, BASE_URL } from '../api/apiClient';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import StarRating from '../components/StarRating/StarRating';
@@ -50,7 +50,7 @@ function ProductDetails() {
   return (
     <main className="product-details">
       <div className="product-details-image-card">
-        <img src={`http://localhost:5001${product.image}`} alt={product.name} />
+        <img src={`${BASE_URL}${product.image}`} alt={product.name} />
       </div>
 
       <div className="product-details-card">

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: candle-backend
+    runtime: node
+    plan: free
+    rootDir: Candle-React/candle-react/backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 24h
+      - key: CORS_ORIGINS
+        sync: false
+      - key: CLIENT_URL
+        sync: false

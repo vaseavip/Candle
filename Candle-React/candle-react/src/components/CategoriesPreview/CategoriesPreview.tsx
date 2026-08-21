@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getCategories } from '../../api/apiClient';
+import { getCategories, BASE_URL } from '../../api/apiClient';
 import type { Category } from '../../types/Category';
 
 function CategoriesPreview() {
@@ -42,7 +42,7 @@ function CategoriesPreview() {
               <div key={category.id} className="col-sm-6 col-lg-4">
                 <div className="card category-card shadow-sm">
                   <img
-                    src={`http://localhost:5001${category.image}`}
+                    src={`${BASE_URL}${category.image}`}
                     alt={category.name}
                   />
 

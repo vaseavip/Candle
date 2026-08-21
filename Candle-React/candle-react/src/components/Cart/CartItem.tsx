@@ -1,4 +1,5 @@
 import type { Product } from '../../types/Product';
+import { BASE_URL } from '../../api/apiClient';
 
 interface CartItemProps {
   product: Product & { quantity: number };
@@ -16,7 +17,7 @@ function CartItem({
   return (
     <div className="cart-item">
       <img
-        src={`http://localhost:5001${product.image}`}
+        src={`${BASE_URL}${product.image}`}
         alt={product.name}
         className="cart-item-image"
       />
