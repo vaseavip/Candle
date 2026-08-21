@@ -111,6 +111,49 @@ function Header() {
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
           Contact
         </NavLink>
+
+        <hr className="mobile-menu-divider" />
+
+        <Link
+          to="/wishlist"
+          className="mobile-menu-icon-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          <img src={wishlistIcon} alt="wishlist" />
+          Wishlist{wishlist.length > 0 ? ` (${wishlist.length})` : ''}
+        </Link>
+
+        <Link
+          to="/cart"
+          className="mobile-menu-icon-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          <img src={cartIcon} alt="cart" />
+          Cart{cartCount > 0 ? ` (${cartCount})` : ''}
+        </Link>
+
+        {isAuthenticated ? (
+          <button
+            type="button"
+            className="mobile-menu-icon-link mobile-menu-logout"
+            onClick={() => {
+              logout();
+              setMenuOpen(false);
+            }}
+          >
+            <img src={profile} alt="profile" />
+            Logout ({user?.email})
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="mobile-menu-icon-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            <img src={profile} alt="profile" />
+            Login
+          </Link>
+        )}
       </div>
     </header>
   );

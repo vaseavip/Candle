@@ -332,6 +332,42 @@ footer p {
   color: #4d3b33;
 }
 
+.mobile-menu-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(77, 59, 51, 0.2);
+  margin: 0;
+}
+
+.mobile-menu-icon-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.mobile-menu-icon-link img {
+  height: 24px;
+}
+
+.mobile-menu-icon-link:hover {
+  color: var(--color-terracotta);
+  padding-left: 8px;
+}
+
+.mobile-menu-logout {
+  font-family: inherit;
+}
+
 @media (max-width: 992px) {
   .desktop-nav {
     display: none;
